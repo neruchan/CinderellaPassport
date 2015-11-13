@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script>
+	$(function(){
+		$("#login_btn").click(function(){
+			$("#loginForm").submit();
+		});
+	});
+</script>
+</head>
+
+<body>
+
+<div id="login">
+<p id="title">シンデレラパス管理画面</p>
+<form action="" name="loginForm" id="loginForm" method="post">
+<table>
+<tr>
+<td width="100" class="login-tbl">ユーザー</td>
+<td><input type="text" class="login" name="userid" value="<#PRINT userid#>"/></td>
+</tr>
+<tr>
+<td class="login-tbl">パスワード</td>
+<td><input type="password" class="login" name="pass" value=""/></td>
+</tr>
+</table>
+<input type="hidden" name="login_flag" value="login_flag" />
+</form>
+<br />
+<#PRINT iderror#>
+<br />
+<p align="center"><a href="javascript:void(0)" id="login_btn"><input type="button" value="ログイン" /></a></p>
+</div>
+
+</body>
+</html>

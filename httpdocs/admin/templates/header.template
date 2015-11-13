@@ -1,0 +1,6 @@
+<!--header-->
+<div class="header">
+<p class="header-content">
+<input type="button" value="ログアウト" onClick="location.href='logout.php'"/></p>
+</div>
+<!--end of header-->

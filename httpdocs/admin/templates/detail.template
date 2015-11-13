@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">クーポン管理画面</div>
+<p class="border-btm"></p>
+
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110" class="title-tbl02">NO</td>
+<td><#PRINT no#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ID</td>
+<td><#PRINT aid#></td>
+</tr>
+<tr>
+<td class="title-tbl02">タイトル</td>
+<td><#PRINT title#></td>
+</tr>
+<tr>
+<td class="title-tbl02">詳細</td>
+<td><#PRINT description#></td>
+</tr>
+<tr>
+<td class="title-tbl02">クーポン注意事項</td>
+<td><#PRINT warning#></td>
+</tr>
+<#PRINT nickname_field#>
+<tr>
+<td class="title-tbl02">オススメ</td>
+<td><input type="checkbox" id="osusume" <#PRINT osusume#> disabled/></td>
+</tr>
+
+<tr>
+<td class="title-tbl02">カテゴリ</td>
+<td><#PRINT category#></td>
+</tr>
+
+<tr>
+<td class="title-tbl02">タグ</td>
+<td><#PRINT tag#></td>
+</tr>
+<tr>
+<td class="title-tbl02">画像</td>
+<td><div class="pic-wrap"><img src="<#PRINT pic_url#>" alt="" /></div></td>
+</tr>
+<tr>
+<td class="title-tbl02">有効期限</td>
+<td><#PRINT exp_date_from#>から<br><#PRINT exp_date_until#>まで</td>
+</tr>
+<tr>
+<td class="title-tbl02">割引金額</td>
+<td><#PRINT before_price#> >>>>> <#PRINT after_price#></td>
+</tr>
+<tr>
+<td class="title-tbl02">投稿日時</td>
+<td><#PRINT addtime#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ＰＶ数</td>
+<td><#PRINT access_num#></td>
+</tr>
+
+<tr>
+<td class="title-tbl02">店舗情報</td>
+<td><a href="detail-shop.php?sid=<#PRINT shop_id#>"><#PRINT shop_name#></a></td>
+</tr>
+
+</table>
+
+<div id="line" align="center">
+<a href="edit-coupon.php?aid=<#PRINT aid#>&no=<#PRINT no#>"><input type="button" class="space02" value="編集" /></a> &nbsp;
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

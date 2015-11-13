@@ -1,0 +1,60 @@
+<html>
+<body>
+
+■テンプレートのサンプル<br>
+<p>
+◎↓EMOJIサンプル<br>
+<#EMOJI   11#><br>
+<#EMOJI 252#><br>
+<br>
+◎↓PRINTサンプル<br>
+<#PRINT hoge#><br>
+<#PRINT hoge2#><br>
+<br>
+◎↓無効な場合(連想配列にKeyがないとこうなる)<br>
+<#PRINT hogehoge#><br>
+<br>
+◎↓INCLUDEサンプル(インクルードされたテンプレート)<br>
+<#INCLUDE hoge.template#><br>
+<br>
+◎↓ループのサンプル<br>
+<table border="1">
+	<tr>
+		<th>名前</th>
+		<th>住所</th>
+		<th>メール</th>
+	</tr>
+<#PRINT loop_dayo#>
+</table>
+<br>
+◎↓本物のループ<br>
+<table border="1">
+	<tr>
+		<th>名前</th>
+		<th>住所</th>
+		<th>メール</th>
+	</tr>
+<#LOOP_START loophoge#>
+	<tr>
+		<td><#LOOP_PRINT name#></td>
+		<td><#LOOP_PRINT address#></td>
+		<td><#LOOP_PRINT email#></td>
+	</tr>
+<#LOOP_END loophoge#>
+</table>
+<table border="1">
+	<tr>
+		<th>名前</th>
+		<th>住所</th>
+		<th>メール</th>
+	</tr>
+<#LOOP_START loophoge2#>
+	<tr>
+		<td><#LOOP_PRINT name#></td>
+		<td><#LOOP_PRINT address#></td>
+		<td><#LOOP_PRINT email#></td>
+	</tr>
+<#LOOP_END loophoge2#>
+</table>
+</body>
+</html>

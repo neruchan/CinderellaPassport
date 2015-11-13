@@ -1,0 +1,425 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS coding created by Starty INT`L Inc */
+
+
+html {
+	overflow-x:hidden;
+}
+
+body {
+	margin:0;
+	padding:0;
+	font-family:'メイリオ','calibri','Arial','Tahoma',sans-serif;
+	font-size:12px;
+	color:#000;
+}
+
+p {
+	margin:0;
+	padding:0;
+}
+
+img {
+	border:none;
+}
+
+a:link {
+	color:#000;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#606060;
+	text-decoration:none;
+}
+
+a:visited {
+	color:#000;
+	text-decoration:none;
+}
+
+a:link img {
+	border:none;
+}
+
+a:visited img {
+	border:none;
+}
+
+.clear {
+	clear:both;
+}
+
+.clearfix {
+	clear:both;
+	padding:15px 0 0 0;
+}
+
+li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+ul {
+	margin:0;
+	padding:0;
+}
+
+input {
+	font-family:'メイリオ','calibri','Arial','Tahoma',sans-serif;
+	font-size:12px;
+	padding: 1px 3px;
+}
+
+.space01 {
+	margin: 0 0 0 6px;
+}
+
+.red {
+	font-size:11px;
+	margin:8px 0 0 0;
+	color:#C00;
+}
+
+/* Login Area */
+
+#login {
+	margin:200px auto;
+	background-color:#efefef;
+	border:1px solid #d9d9d9;
+	padding:15px;
+	width:400px;
+	z-index:100;
+}
+
+.login-tbl{
+	width:100px;
+	padding:3px 0 3px 0;
+}
+
+.login {
+	width:290px;
+}
+
+#title {
+	background:#fa877d;
+	color:#FFF;
+	text-align:center;
+	padding: 2px 0;
+	font-size:15px;
+	margin:0 0 8px 0;
+}
+
+
+/* Header Area */
+
+.header {
+	width:100%;
+	background-color:#efefef;
+	height:60px;
+}
+
+.header-content {
+	width:930px;
+	margin:0 auto;
+	padding:15px 0 0 0;
+	text-align:right;
+}
+
+
+/* Main Area */
+
+#container {
+	width:930px;
+	margin:0 auto;
+}
+
+#clear {
+	clear:both;
+}
+
+#navi {
+	margin:30px auto;
+}
+
+#navi a{
+	float:left;
+	display:block;
+	background:#65AFFA;
+	color:#FFF;
+	text-align:center;
+	padding: 8px 0;
+	font-size:12px;
+	width:150px;
+}
+
+.border-btm {
+	clear:both;
+	border-bottom:2px solid #efefef;
+}
+
+#title02 {
+	float:left;
+	color:#fa877d;
+	padding:3px 0;
+	font-size:16px;
+	font-weight:600;
+}
+
+.title-tbl {
+	background-color:#efefef;
+	padding-top:8px;
+	padding-bottom:10px;
+	text-align:center;
+}
+
+.title-tbl select{
+	width:80px;
+}
+
+.title-tbl02 select{
+	width:80px;
+}
+
+.title-tbl03 select{
+	width:80px;
+}
+
+.title-tbl02 {
+	background-color:#efefef;
+	padding:8px 15px 10px 0;
+	padding-bottom:10px;
+	text-align:right;
+}
+
+.title-tbl03 {
+	background-color:#efefef;
+	padding-top:8px;
+	padding-bottom:10px;
+	text-align:center;
+	font-size:11px;
+}
+
+.tbl {
+	padding-top:8px;
+	padding-bottom:12px;
+	border-bottom:1px dotted #cacaca;
+}
+
+.tbl a{
+	color:#fa5050;
+	text-decoration:underline;
+}
+
+#page {
+	margin:6px auto;
+	padding:3px 0;
+	border-top:2px solid #efefef;
+	font-size:15px;
+}
+
+#page a{
+	padding:5px 0;
+	color:#fa877d;
+	font-weight:600;
+	text-align:center
+}
+
+#line {
+	margin:5px auto;
+	padding:3px 0;
+	border-top:2px solid #efefef;
+	font-size:15px;
+}
+
+.number {
+	float:right;
+	color:#333333;
+	font-size:13px;
+	padding:3px 0;
+	text-align:right;
+}
+
+.pink {
+	color:#fa877d;
+	font-size:16px;
+	font-weight:600;
+}
+
+.opt {
+	font-size:12px;
+	font-family:'メイリオ','calibri','Arial','Tahoma',sans-serif;
+}
+
+select {
+	font-size:11px;
+	font-family:'メイリオ','calibri','Arial','Tahoma',sans-serif;
+}
+
+.tbl input {
+	font-size:11px;
+}
+
+.pic-wrap {
+	float:left;
+	background:#FFF;
+	overflow:hidden;
+	width:72px;
+	height:56px;
+}
+
+.pic img {
+	width:80px;
+}
+
+.pic-wrap02 {
+	float:left;
+	background:#FFF;
+	overflow:hidden;
+	width:48px;
+	height:48px;
+}
+
+.pic02 img {
+	width:60px;
+}
+
+.pic-wrap03 {
+	float:left;
+	background:#FFF;
+	overflow:hidden;
+	width:48px;
+	height:36px;
+}
+
+.pic03 img {
+	width:75px;
+}
+
+.link a{
+	color:#fa5050;
+	text-decoration:underline;
+}
+
+
+/* Form Size*/
+
+.form01 {
+	width:780px;
+}
+
+.form02 {
+	width:300px;
+}
+
+.form02b {
+	width:370px;
+	margin:5px 0 0 0;
+}
+
+.form02c {
+	width:80px;
+}
+
+.form02d {
+	width:160px;
+}
+
+.form03 {
+	float:left;
+	margin:10px 0 0 10px;
+}
+
+.form03b {
+	float:left;
+	margin:0;
+}
+
+.form04 {
+	resize:none;
+	width:780px;
+	height:300px;
+}
+
+.form04b {
+	resize:none;
+	width:780px;
+	height:120px;
+}
+
+.title-tbl4 {
+	background-color:#faede1;
+	text-align:left;
+	padding: 5px 0 6px 10px;
+}
+
+
+/*=======================================================================
+
+追加しました！！
+>>Nelson
+ 
+=======================================================================*/
+
+.propicunknown {
+width: 150px;
+height: 150px;
+border: 3px solid #FFF;
+-webkit-box-shadow: 1px 1px 1px 1px #d2d1d1;
+box-shadow: 1px 1px 1px 1px #d2d1d1;
+}
+
+.propicunknown1 {
+width: 150px;
+height: 150px;
+border: 3px solid #FFF;
+-webkit-box-shadow: 1px 1px 1px 1px #d2d1d1;
+box-shadow: 1px 1px 1px 1px #d2d1d1;
+}
+
+.propicunknown2 {
+width: 150px;
+height: 150px;
+border: 3px solid #FFF;
+-webkit-box-shadow: 1px 1px 1px 1px #d2d1d1;
+box-shadow: 1px 1px 1px 1px #d2d1d1;
+}
+
+.propicunknown3 {
+width: 150px;
+height: 150px;
+border: 3px solid #FFF;
+-webkit-box-shadow: 1px 1px 1px 1px #d2d1d1;
+box-shadow: 1px 1px 1px 1px #d2d1d1;
+}
+
+.nicEdit-panel{
+	padding:2px;
+}
+.nicEdit-panelContain{
+}
+
+.nicEdit-panel div:nth-child(2) div{
+	background:url(/img/nicEditIcons-latest.png) 0 0;
+}
+.nicEdit-panel div:nth-child(3) div{
+	background:url(/img/nicEditIcons-latest.png) -70px 0;
+}
+.nicEdit-panel div:nth-child(4) div{
+	background:url(/img/nicEditIcons-latest.png) -140px 0;
+}
+.nicEdit-panel div:nth-child(5) div{
+	background:url(/img/nicEditIcons-latest.png) -210px 0;
+}
+.nicEdit-panel div:nth-child(6) div{
+	background:url(/img/nicEditIcons-latest.png) -280px 0;
+}
+.nicEdit-panel div:nth-child(7) div{
+	background:url(/img/nicEditIcons-latest.png) -350px 0;
+}
+.nicEdit-main b{
+	font-size:24px;
+	overflow-x:scroll;
+}

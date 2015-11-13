@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" href="css/style.css">
+        <title>ティアリーアプリ</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header-content">
+                <div class="header-text">
+                <a href="detail.php?id=<#PRINT osusume_id#>">
+                <!-- アダム、ここ使ってって！<#PRINT osusume_pic#> -->
+                    <h1><#PRINT osusume_shopname#></h1>
+                    <h3><#PRINT osusume_title#><br><#PRINT osusume_before#>円 &#8594;<span style="color:red;font-weight:bold;"> <#PRINT osusume_after#>円</span></h3>
+                </a>
+                </div>
+            </div>
+
+<!-- コンテンツ tiled content-->
+
+			<#LOOP_START dataAll#>
+				<#LOOP_PRINT openTag#>
+				<a href="detail.php?id=<#LOOP_PRINT id#>">
+                <div class="tiled-<#LOOP_PRINT classLR#>">
+                    <div class="<#LOOP_PRINT classLR#>-inner">
+                        <div class="thumb">
+                            <div class="thumb-image">
+                                <img src="<#LOOP_PRINT pic_url#>" alt="content">
+                            </div>
+                            <div class="thumb-desc">
+                                <p><#LOOP_PRINT shop_name#></p>
+                            </div>
+                        </div>
+                        <div class="coupon-title">
+                            <h3><#LOOP_PRINT title#></h3>
+                            <div class="coupon-price">
+                                <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                                <p style="display:inline;"><#LOOP_PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#LOOP_PRINT after_price#>円</span></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="coupon-map">
+                            <img src="img/map-icon.png" alt="map-icon" style="display: inline;">
+                            <p style="display:inline;">最寄駅：<#LOOP_PRINT shop_station#></p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+				<#LOOP_PRINT closeTag#>
+			<#LOOP_END dataAll#>
+
+            
+<!--/ コンテンツ tiled content-->
+
+            <#PRINT mottomiru#>
+            
+            
+        </div>
+    </body>
+</html>

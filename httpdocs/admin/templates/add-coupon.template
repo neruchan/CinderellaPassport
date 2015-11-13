@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<title>TiARYモデル　｜　管理画面</title>
+<script>
+$(function(){
+	$("#add_btn").click(function(){
+		$("#add_form").submit();
+	});
+});
+</script>
+<script language="javascript"> 
+function openWindow() { 
+  window.open("shop_search_window.php","_blank","height=700,width=700, status=yes,toolbar=no,menubar=no,location=no"); 
+} 
+</script> 
+
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">クーポン投稿画面</div>
+<p class="border-btm"></p>
+
+<p class="red">※ は必須項目です。</p>
+<form action="" method="post"  enctype="multipart/form-data" id="add_form" name="add_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td class="title-tbl02">タイトル <span class="red">※</span></td>
+<td><input type="text" class="form01" name="title" value="<#PRINT title#>"/><br />
+</td>
+</tr>
+<#PRINT title_err#>
+<tr>
+<td class="title-tbl02">カテゴリ <span class="red">※</span></td>
+<td>
+<#PRINT category_checkbox#>
+</td>
+</tr>
+<#PRINT category_err#>
+
+<tr>
+<td class="title-tbl02">TAG</td>
+<td><input type="text" class="form01" name="tag" value="<#PRINT tag#>"/><br>タグ追加の際は半角スペース区切りで複数のタグを一度に登録することが出来ます。</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td><input type="file" class="form03b" name="article_img"/>
+</td>
+</tr>
+<#PRINT article_img_err#>
+<tr>
+<td class="title-tbl02">詳細 <span class="red">※</span></td>
+<td>
+<textarea class="form04" rows="" cols="" id="contents" name="description"><#PRINT description#></textarea>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">クーポン注意事項 <span class="red">※</span></td>
+<td>
+<textarea class="form04" rows="" cols="" id="contents" name="coupon_warning"><#PRINT coupon_warning#></textarea>
+</td>
+</tr>
+
+<#PRINT contents_err#>
+<tr>
+<td class="title-tbl02">有効期限</td>
+<td class="link">
+<select name="exp_date_from_y">
+<option value="">-</option>
+<#PRINT exp_date_from_y#>
+</select>年
+
+<select name="exp_date_from_m">
+<option value="">-</option>
+<#PRINT exp_date_from_m#>
+</select>月
+
+<select name="exp_date_from_d">
+<option value="">-</option>
+<#PRINT exp_date_from_d#>
+</select>日
+
+~
+
+<select name="exp_date_until_y">
+<option value="">-</option>
+<#PRINT exp_date_until_y#>
+</select>年
+
+<select name="exp_date_until_m">
+<option value="">-</option>
+<#PRINT exp_date_until_m#>
+</select>月
+
+<select name="exp_date_until_d">
+<option value="">-</option>
+<#PRINT exp_date_until_d#>
+</select>日
+
+</td>
+</tr>
+<tr>
+<td class="title-tbl02">割引金額(前の金額)</td>
+<td class="link"><input type="text" class="form01" name="before_price" value="<#PRINT before_price#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">割引金額(割引した金額)</td>
+<td class="link"><input type="text" class="form01" name="after_price" value="<#PRINT after_price#>"/></td>
+</tr>
+
+<tr>
+<td class="title-tbl02">店舗情報</td>
+<td>
+<input type="text" id="shop_id_show" value="" disabled/> <br>
+<input type="text" id="shop_name_show" value="" disabled/>
+<div onclick="openWindow()" >検索</div></td>
+<br><#PRINT shop_err#>
+</tr>
+
+</table>
+<input type="hidden" name="shop_id" id="shop_id" value=""/>
+<input type="hidden" name="add_flag" value="add_flag"/>
+<input type="hidden" name="up_img" value="<#PRINT up_img#>"/>
+</form>
+<div id="line" align="center">
+<a href="javascript:void(0)" id="add_btn"><input type="button" class="space02" value="内容を確認" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

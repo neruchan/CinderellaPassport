@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script language="javascript"> 
+function clickChoose(vals,name) { 
+  window.opener.document.getElementById('shop_name_show').value=""+name;
+  window.opener.document.getElementById('shop_id_show').value=""+vals;
+  window.opener.document.getElementById('shop_id').value=""+vals;
+  window.close();
+} 
+</script> 
+<script>
+	$(function(){
+		$("#login_btn").click(function(){
+			$("#loginForm").submit();
+		});
+	});
+</script>
+</head>
+
+<body>
+<center>
+<br><br>
+<form action="" method="post" enctype="multipart/form-data" id="eform" name="eform">
+<input type="text" name="keyword" />
+<input type="hidden" name="submit" value="submit"/>
+<input type="submit" value="検索"/>
+</form>
+<#PRINT tag_1#>
+<table>
+
+<tr>
+    <td>id</td>
+    <td>店舗名</td>
+    <td>都道府県</td>
+    <td>店舗アドレス</td>
+    <td>店舗メール</td>
+    <td></td>
+</tr>
+
+<#LOOP_START dataAll#>
+<tr>
+<td class="tbl"><#LOOP_PRINT id#></td>
+<td class="tbl"><#LOOP_PRINT name#></td>
+<td class="tbl"><#LOOP_PRINT pref#></td>
+<td class="tbl"><#LOOP_PRINT address#></td>
+<td class="tbl"><#LOOP_PRINT email#></td>
+<td class="tbl" align="center"><div onclick="javascript:clickChoose(<#LOOP_PRINT id#>,'<#LOOP_PRINT name#>')">選択</div></td>
+</tr>
+<#LOOP_END dataAll#>
+
+</table>
+<#PRINT tag_2#>
+</center>
+</body>
+</html>

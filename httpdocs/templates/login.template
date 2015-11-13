@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <title>ティアリーアプリ</title>
+<!--SCRIPTS-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+   <!--BUTTON HOVER-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+    </script>
+<!--END OF BUTTON HOVER-->
+<!--/SCRIPTS-->
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.php#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+            <div class="header-content2 login">
+
+<!--LOGIN FORM-->
+                <form action="" id="login-form" method="post" name="login-form">
+                    <label for="username"><strong>ID(メールアドレス)</strong></label><br>
+                    <input type="text" id="username" name="login_id" value="<#PRINT login_id#>"><br>
+                    <label for="password"><strong>パスワード</strong></label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <#PRINT iderror#>
+                    <input type="checkbox" id="remember_me" name="_remember_me"><label for="remember_me">次回から自動でログインする</label><br><br><p>オートログインをしたまま端末を紛失した場合、拾得した人が端末内のデータを閲覧できてしまう恐れがあります。</p><br><p><a href="#" style="color:#19acff;"><u>プライバシーポリシー</u></a>・<a href="#" style="color:#19acff;"><u>ティアリーシンデレラパスポート利用規約</u></a>をご覧ください。</p>
+
+<!--SUBMIT BUTTON-->
+                    <div class="orange-button" style="margin-top:16px;" onClick="document.getElementById('login-form').submit();"><p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">ログイン</p></div>
+<!--/SUBMIT BUTTON-->
+
+<input type="hidden" name="login_btn" id="login_btn" value="login_btn" />
+                </form>
+                <a href="login-help.php"><strong style="display:block;text-align:right;color:#19acff;"><u>パスワードを忘れた方はこちら</u></strong></a>
+<!--/LOGIN FORM-->
+
+            </div>
+            <div class="title-bluebox">
+                <strong>IDをお持ちでない方</strong>
+            </div>
+            <div class="content-wrapper" style="padding-top:20px;padding-bottom:1px;">
+                <img src="img/passport.png" alt="logo" style="width:100%;height:auto;margin-bottom:20px;"><p style="width:95%;margin:0 auto 2em auto;">ティアリープレスについての説明が入ります。ティアリープレスについての説明が入ります。ティアリープレスについての説明が入ります。ティアリープレスについての説明が入ります。</p>
+                <div class="orange-button">新規会員登録</div>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved.</div>
+        </div>
+    </body>
+</html>

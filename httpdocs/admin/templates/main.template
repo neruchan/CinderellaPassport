@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+
+</head>
+<script>
+	$(function(){
+		$("#del_btn").click(function(){
+			$("#search_flag1").val("del");
+			$("#delForm").submit();
+		});
+	
+		
+		$("#search_a_category").change(function(){
+			$("#delForm").submit();
+		});
+		$("#search_writer").change(function(){
+			$("#delForm").submit();
+		});
+		$("#search_a_addtime").change(function(){
+			$("#delForm").submit();
+		});
+        
+         $("#search_a_pv").change(function(){
+			$("#delForm").submit();
+		});
+	});
+</script>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">クーポン管理画面</div></br>
+
+<div class="number">
+<br/>
+表示：<span class="pink"><#PRINT search_num#></span> &nbsp; 全記事数合計：<span class="pink"><#PRINT all_num#></span> &nbsp; <input type="button" value="新規クーポン" onClick="location.href='add-coupon.php'" />
+</div>
+<p class="border-btm"></p>
+<form action="main.php" name="delForm" id="delForm" method="post" >
+<table border="0" cellspacing="2" cellpadding="3">
+<tr>
+<td width="40" class="title-tbl">NO</td>
+<td width="60" class="title-tbl">ID</td>
+<td width="480" class="title-tbl">タイトル</td>
+<td width="100" class="title-tbl">
+<select name="search_a_category" id="search_a_category">
+<#PRINT article_category_pulldown#>
+</select>
+</td>
+<td width="100" class="title-tbl">
+<select name="search_a_addtime" id="search_a_addtime">
+<#PRINT article_addtime_pulldown#>
+</select>
+</td>
+<td width="40" class="title-tbl"><select name="search_a_pv" id="search_a_pv">
+<#PRINT article_pv_pulldown#>
+</select></td>
+<td width="50" class="title-tbl">削除</td>
+</tr>
+<#LOOP_START dataAll#>
+<tr>
+<td class="tbl"><#LOOP_PRINT no#></td>
+<td class="tbl"><#LOOP_PRINT id#></td>
+<td class="tbl"><a href="detail.php?aid=<#LOOP_PRINT id#>&no=<#LOOP_PRINT no#>"><#LOOP_PRINT title#></a></td>
+<td class="tbl"><#LOOP_PRINT category#></td>
+<td class="tbl"><#LOOP_PRINT addtime#></td>
+<td class="tbl"><#LOOP_PRINT access_num#></td>
+<td class="tbl" align="center"><input type="checkbox" name="delete_id[]" value="<#LOOP_PRINT id#>"/></td>
+</tr>
+<#LOOP_END dataAll#>
+</table>
+<input type="hidden" name="search_flag1" id="search_flag1" value="">
+</form>
+<div align="right">
+<a href="javascript:void(0)" id="del_btn"><input type="button" class="space02" value="削除" /></a>
+</div>
+
+<div id="page" align="center">
+<a href="main.php?p=<#PRINT prev_page#>"><#PRINT str_prev_page#></a>
+<#LOOP_START pages#>
+	<#LOOP_PRINT ipage_link_str#><#LOOP_PRINT ipage#><#LOOP_PRINT ipage_link_a#>
+<#LOOP_END pages#>
+<a href="main.php?p=<#PRINT next_page#>"><#PRINT str_next_page#></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

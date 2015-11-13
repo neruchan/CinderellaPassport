@@ -1,0 +1,7 @@
+<!--navigation start-->
+<div id="navi">
+<a href="main.php">クーポン管理画面</a>
+<a class="space01" href="shop.php">店舗管理画面</a>
+<a class="space01" href="book.php">予約管理画面</a>
+</div>
+<!--navigation end-->

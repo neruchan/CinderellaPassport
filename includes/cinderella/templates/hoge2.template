@@ -1,0 +1,5 @@
+	<tr>
+		<td><#PRINT name#></td>
+		<td><#PRINT address#></td>
+		<td><#PRINT email#></td>
+	</tr>

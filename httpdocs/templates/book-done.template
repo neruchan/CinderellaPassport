@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+<!--SCRIPTS-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!--BUTTON HOVER-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.top-close').on('touchstart',function(){
+                $(this).css({"background-color":"#84BAE4"});
+            });
+            $('.top-close').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+    </script>
+<!--END OF BUTTON HOVER-->
+<!--/SCRIPTS-->
+    <title>ティアリーアプリ</title>
+</head>
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.php#>
+<!--/***HEADER***-->
+            <a href="index.php"><div class="top-close"><img src="img/close-button.png" alt="close"></div></a>
+
+            <div style="height:3em;"></div>
+            <div class="title-bluebox">
+                <strong>予約情報を送信しました。</strong>
+            </div>
+            <div class="content-wrapper">
+                <div class="desc-text" style="text-align:center;"><strong>ご予約ありがとうございました。</strong><br>
+                今の段階ではまだ予約は確定ではありません。<br>
+                サロンからの返信をお待ちください。
+                </div>
+                <hr style="border: none;border-top: 0.1em solid #e4e4e4;width: 95%;margin: 0 auto;margin-bottom:1em;">
+                <div class="desc-text">※この後自動返信メールをお送りしております。
+                メールの返信がない場合は通常の処理が出来ておりませんので、再
+                度フォームよりお問合せいただくか、コチラまでご連絡くださいま
+                せ。</div>
+                <div class="arrow_box"><img src="img/comment-instructions1.png" alt="行ってきましあ"></div>
+                <div class="thanks-wrapper">
+                    <img src="img/comment-instructions2.png">
+                    <img src="img/comment-instructions3.png">
+                    <div class="block-wrapper">
+                        <div class="content-block content-text"><p>説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。</p></div><div class="content-block" style="width:50%;"><img src="img/comment-screenshot.png"></div>
+                    </div>
+                    <div class="blue-arrow"></div>
+                    <img src="img/comment-instructions4.png">
+                    <div class="block-wrapper">
+                        <div class="content-block content-text"><p>説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。説明が入ります。</p></div><div class="content-block" style="width:50%;"><img src="img/comment-screenshot2.png"></div>
+                    </div>
+                    <div class="blue-arrow"></div>
+                    <img src="img/comment-instructions5.png">
+                    <img src="img/comment-coupon.jpg">
+                    <img src="img/comment-instructions6.png">
+                </div>
+                
+                <div class="width-wrap green-title">
+                        <div class="green-square"></div><p style="display:inline;">あなたへのおすすめクーポン</p>
+                </div>
+                <div class="width-wrap">
+                    <div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                ロイン♡石原さと...</p></div><div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                ロイン♡石原さと...</p></div><div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                ロイン♡石原さと...</p></div>
+                </div>
+                <div class="width-wrap green-title">
+                    <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                </div>
+                <div class="width-wrap">
+                    <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                </div>
+                <hr id="gray-thin">
+                <div class="width-wrap green-title">
+                    <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                </div>
+                <div class="width-wrap">
+                    <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                </div>
+                <hr id="gray-thin">
+                <div class="width-wrap green-title">
+                    <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                </div>
+                <div class="width-wrap">
+                    <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                </div>
+            </div>
+            <div class="big-margin"></div>
+        </div>
+
+<!--***FOOTER***-->
+            
+<!--/***FOOTER***-->
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+/*BUTTON HOVER*/
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+/*END OF BUTTON HOVER*/
+    </script>
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.php#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+            <div class="title-bluebox">
+                <strong>パスワード変更</strong>
+            </div>
+            <div class="header-content2 login">
+                <p style="font-size:1em;"><strong>変更したいメールアドレスを入力して<br>「送信する」ボタンを押してください。</strong></p>
+                <p style="font-size:0.9em;text-align:justify;"><br>記入したメールアドレス宛に確認メールが届きます。<br><span style="color:red;">メール受信制限をされている方は tiary.co.jp からのメール受信を許可してください。</span><br>※メールアドレス変更完了メールは変更前および変更後の両方のアドレスに送信いたします。<br>※変更完了メールには変更前および変更後のメールアドレスを記載しております。</p>
+
+<!--FORM STARTS-->
+                <form action="#" id="change-email" name="change-email">
+                    <div class="spacing-section">
+                        <label for="email-changeinput"><p>ID(メールアドレス)</p></label>
+                        <input type="text" id="email-changeinput"><br>
+                    </div>
+                </form>
+<!--FORM ENDS-->
+            <div class="orange-button" onClick="document.getElementById('change-email').submit();">送信する</div>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved.</div>
+        </div>
+    </body>
+</html>

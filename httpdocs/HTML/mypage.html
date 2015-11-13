@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>ティアリーアプリ</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="top-bar">
+            <div class="top-content" style="width:90%;padding-left:3%;color:#72b3d8;"><strong>マイページ</strong></div><div class="top-content" style="width:10%;"><a href="index.html"><img src="img/close-button.png" alt="close" style="width:70%;height:auto;"></a></div>
+        </div>
+        <div class="top-content-margin"></div>
+        <div class="title-bluebox" style="text-align:left;">
+            <strong>マイメニュー</strong>
+        </div>
+        <div class="my-menu-wrapper clearfix">
+            <a href="#"><div class="menu-item"><img src="img/mypage-icon1.png" alt="icon"><p>予約確認</p></div></a>
+            <a href="#"><div class="menu-item"><img src="img/mypage-icon2.png" alt="icon"><p>お気に入り</p></div></a>
+            <a href="#"><div class="menu-item"><img src="img/mypage-icon3.png" alt="icon"><p>クーポン履歴</p></div></a>
+            <a href="#"><div class="menu-item"><img src="img/mypage-icon4.png" alt="icon"><p>ユーザー情報変更</p></div></a>
+        </div>
+        <div class="title-bluebox">
+            <strong>ユーザー情報</strong>
+        </div>
+        <table class="store-details">
+            <tr>
+                <td>名前</td>
+                <td>南　ことり</td>
+            </tr>
+            <tr>
+                <td>アドレス</td>
+                <td>abcd@gmail.com</td>
+            </tr>
+            <tr>
+                <td>パスワード</td>
+                <td>・・・・・</td>
+            </tr>
+            <tr>
+                <td>生年月日</td>
+                <td>1989/10/27</td>
+            </tr>
+            <tr>
+                <td>電話番号</td>
+                <td>1234-5678-2545</td>
+            </tr>
+            <tr>
+                <td>プッシュ通知</td>
+                <td>
+                    <div class="user-button">
+                        <ul>
+                            <!--class "push-active" depends on status of the database-->
+                            <li id="push-off">OFF</li><li id="push-on" class="push-active">ON</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>リストア</td>
+                <td>
+                    <a href="#"><div class="user-button">
+                            <p>修復する</p>
+                        </div></a>
+                </td>
+            </tr>
+        </table>
+        <div class="title-bluebox">
+            <strong>その他のメニュー</strong>
+        </div>
+        <a href="#" class="mypage-item-a"><div class="mypage-item">
+                <p>お知らせ</p><img src="img/mypage-arrow.png" alt="arrow">
+            </div></a><hr class="gray-line-full">
+        <a href="#"><div class="mypage-item">
+                <p>お問い合せ</p><img src="img/mypage-arrow.png" alt="arrow">
+            </div></a><hr class="gray-line-full">
+        <a href="#"><div class="mypage-item">
+                <p>会社情報</p><img src="img/mypage-arrow.png" alt="arrow">
+            </div></a><hr class="gray-line-full">
+        <a href="#"><div class="mypage-item">
+                <p>利用規約</p><img src="img/mypage-arrow.png" alt="arrow">
+            </div></a><hr class="gray-line-full">
+        <a href="#"><div class="mypage-item">
+                <p>プライバシーポリシー</p><img src="img/mypage-arrow.png" alt="arrow">
+            </div></a><hr class="gray-line-full">
+            
+        <a href="#"><div class="logout"><img src="img/logout.png" alt="logout"><span>ログアウト</span></div></a>
+
+        <div class="big-margin"></div>
+    </div>
+
+
+<!--***FOOTER***-->
+            <div class="footer">
+                <div class="footer-wrap">
+                    <div class="footer-item">
+                        <img src="img/footer1.png" alt="footer">
+                    </div>
+                    <div class="footer-item">
+                        <img src="img/footer2.png" alt="footer">
+                    </div>
+                    <div class="footer-item">
+                        <img src="img/footer3.png" alt="footer">
+                    </div>
+                    <div class="footer-item">
+                        <img src="img/footer4.png" alt="footer">
+                    </div>
+                </div>
+            </div>
+<!--/***FOOTER***-->
+
+
+    </div>
+    
+<!--SCRIPTS-->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+/*CODE FOR ON OFF EFFECT*/
+        $(".push-active").on('click',function(){
+            if($("#push-on").hasClass("push-active")){
+                $(this).css({"transform":"translateX(-100%)"});
+                /*PUT POST LOGIC HERE TURN FROM ON INTO OFF*/
+            }else{
+                $(this).css({"transform":"translateX(100%)"});
+                /*PUT POST LOGIC HERE TURN FROM OFF INTO ON*/
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

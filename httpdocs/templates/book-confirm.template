@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+<!--SCRIPTS-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!--BUTTON HOVER-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+            $('.blue-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#e0eefa,#f3faff)"});
+            });
+            $('.blue-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+    </script>
+<!--END OF BUTTON HOVER-->
+<!--/SCRIPTS-->
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.php#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+            <div class="title-bluebox">
+                <strong>予約確認</strong>
+            </div>
+            <div class="content-wrapper" style="padding-top:1px;padding-bottom:1px;">
+                <div class="header-content2">
+                    <img src="img/afloat.jpg" alt="banner">
+                    <div class="head-desc">
+                        <strong>【AFLOATで可愛くなる★特別プラン】カット</strong>
+                        <p>クーポンの詳細などが載ります。クーポンの詳細などが載りま す。クーポンの詳細などが載ります。
+                        </p>
+                    </div>
+                    <div class="head-footwrap clearfix">
+                        <div class="head-footleft">
+                            <p>有効期限
+                                <br>9月2日(水)~9/28(月)まで</p>
+                        </div>
+                        <div class="head-footright">
+                            <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                            <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-lightbox">
+                希望日確認
+            </div>
+            <div class="content-wrapper">
+                <table class="store-details" style="font-size:14px;">
+                    <tr>
+                        <td>第1希望日時</td>
+                        <td>2015年10月07日(水)</td>
+                        <td>13:00</td>
+                    </tr>
+                    <tr>
+                        <td>第2希望日時</td>
+                        <td>2015年10月08日(木)</td>
+                        <td>12:00</td>
+                    </tr>
+                    <tr>
+                        <td>第3希望日時</td>
+                        <td>2015年10月09日(金)</td>
+                        <td>14:00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-lightbox">
+                ユーザー情報確認
+            </div>
+            <div class="content-wrapper" style="padding-bottom:1px;">
+                <table class="store-details">
+                    <tr>
+                        <td>お名前</td>
+                        <td>南ことり</td>
+                    </tr>
+                    <tr>
+                        <td>フリガナ</td>
+                        <td>ミナミコトリ</td>
+                    </tr>
+                    <tr>
+                        <td>電話番号</td>
+                        <td>080-1234-5678</td>
+                    </tr>
+                    <tr>
+                        <td>メールアドレス</td>
+                        <td>mxcan25@yahoo.co.jp</td>
+                    </tr>
+                </table>
+                <div style="margin:20px auto;"></div>
+                        <a href="book-done.php"><div class="orange-button">上記の内容で送信する</div></a>
+                        <a href="book-form.php"><div class="blue-button"><img src="img/arrow-back.png" alt="modoru">戻る</div></a>
+                        </div>
+                        <div style="height:50px;"></div>
+            </div>
+            
+    </body>
+</html>

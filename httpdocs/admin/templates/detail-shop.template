@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">店舗投稿画面</div>
+<p class="border-btm"></p>
+
+<p class="red">※ は必須項目です。</p>
+<form action="" method="post"  enctype="multipart/form-data" id="add_form" name="add_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110" class="title-tbl02">店舗名 <span class="red">※</span></td>
+<td><#PRINT name#><br />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">都道府県 <span class="red">※</span></td>
+<td>
+<#PRINT pref#>
+</td>
+</tr>
+<tr>
+<td class="title-tbl02">郵便番号 <span class="red">※</span></td>
+<td>
+<#PRINT zip#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">住所 <span class="red">※</span></td>
+<td>
+<#PRINT address#>
+</td>
+</tr>
+
+
+<tr>
+<td class="title-tbl02">最寄駅 <span class="red">※</span></td>
+<td>
+<#PRINT station#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">アクセス <span class="red">※</span></td>
+<td>
+<#PRINT access#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">営業時間 <span class="red">※</span></td>
+<td>
+<#PRINT eigyo_jikan#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">定休日 <span class="red">※</span></td>
+<td>
+<#PRINT holiday#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">メールアドレス <span class="red">※</span></td>
+<td>
+<#PRINT email#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">電話番号 <span class="red">※</span></td>
+<td>
+<#PRINT phone#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">平均価格 <span class="red">※</span></td>
+<td>
+<#PRINT average_price#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">サイト <span class="red">※</span></td>
+<td>
+<#PRINT website#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">詳細 <span class="red">※</span></td>
+<td>
+<#PRINT detail#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td>
+<div class="pic-wrap">
+<img src="<#PRINT pic_url1#>" width="72"/>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td>
+<div class="pic-wrap">
+<img src="<#PRINT pic_url2#>" width="72"/>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td>
+<div class="pic-wrap">
+<img src="<#PRINT pic_url3#>" width="72"/>
+</div>
+</td>
+</tr>
+
+
+</table>
+
+<div id="line" align="center">
+<a href="edit-shop.php?sid=<#PRINT id#>&no=<#PRINT no#>"><input type="button" class="space02" value="編集" /></a> &nbsp;
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

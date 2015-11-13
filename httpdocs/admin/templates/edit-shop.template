@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<title>TiARYモデル　｜　管理画面</title>
+<script>
+$(function(){
+	$("#add_btn").click(function(){
+		$("#add_form").submit();
+	});
+});
+</script>
+<script language="javascript"> 
+function openWindow() { 
+  window.open("shop_search_window.php","_blank","height=700,width=700, status=yes,toolbar=no,menubar=no,location=no"); 
+} 
+</script> 
+
+<script type='text/javascript'>//<![CDATA[
+	$(function(){
+	    $(".propicunknown1").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(<#PRINT pic_url1#>)"});
+        $(".propicunknown2").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(<#PRINT pic_url2#>)"});
+        $(".propicunknown3").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(<#PRINT pic_url3#>)"});
+    })
+    
+function onbrowse(index) {
+    document.getElementById('article_img'+index).click();
+}
+
+function onUpload1(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg1;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg1(file);
+    }
+}
+
+function changeimg1(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".propicunknown1").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(" + str + ")"});
+}
+
+function onUpload2(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg2;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg2(file);
+    }
+}
+
+function changeimg2(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".propicunknown2").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(" + str + ")"});
+}
+
+function onUpload3(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg3;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg3(file);
+    }
+}
+
+function changeimg3(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".propicunknown3").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(" + str + ")"});
+}
+//]]>
+
+</script>
+
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">店舗投稿画面</div>
+<p class="border-btm"></p>
+
+<p class="red">※ は必須項目です。</p>
+<form action="" method="post"  enctype="multipart/form-data" id="add_form" name="add_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110" class="title-tbl02">店舗名 <span class="red">※</span></td>
+<td><input type="text" class="form01" name="name" value="<#PRINT name#>"/><br />
+<#PRINT name_err#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">都道府県 <span class="red">※</span></td>
+<td>
+<select name="todoufukens">
+<option value="">-</option>
+<#PRINT todoufukens#>
+</select>
+</td>
+</tr>
+<tr>
+<td class="title-tbl02">郵便番号 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="zip" value="<#PRINT zip#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">住所 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="address" value="<#PRINT address#>" />
+</td>
+</tr>
+
+
+<tr>
+<td class="title-tbl02">最寄駅 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="eki" value="<#PRINT eki#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">アクセス <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="access" value="<#PRINT access#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">営業時間 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="eigyo_jikan" value="<#PRINT eigyo_jikan#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">定休日 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="holiday" value="<#PRINT holiday#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">メールアドレス <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="email" value="<#PRINT email#>" />
+<#PRINT email_err#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">電話番号 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="phone" value="<#PRINT phone#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">平均価格 <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="average_price" value="<#PRINT average_price#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">サイト <span class="red">※</span></td>
+<td>
+<input type="text" class="form01" name="shop_website" value="<#PRINT shop_website#>" />
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">詳細 <span class="red">※</span></td>
+<td>
+<textarea class="form04" rows="" cols="" id="contents" name="shop_details"><#PRINT shop_details#></textarea>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td><input type="button" class="propicunknown1" onclick="javascript:onbrowse(1)" /><br><input type="file" class="form03b" name="article_img1" id="article_img1" onchange="onUpload1(this);"/>
+<br>
+<#PRINT article_img1_err#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td><input type="button" class="propicunknown2" onclick="javascript:onbrowse(2)" /><br><input type="file" class="form03b" name="article_img2" id="article_img2" onchange="onUpload2(this);"/>
+<br>
+<#PRINT article_img2_err#>
+</td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td>
+<input type="button" class="propicunknown3" onclick="javascript:onbrowse(3)" /><br><input type="file" class="form03b" name="article_img3" id="article_img3" onchange="onUpload3(this);"/>
+
+<br>
+<#PRINT article_img3_err#>
+</td>
+</tr>
+
+
+</table>
+<input type="hidden" name="shop_id" id="shop_id" value="<#PRINT shop_id#>"/>
+<input type="hidden" name="add_flag" value="add_flag"/>
+<input type="hidden" name="pic_url1" value="<#PRINT pic_url1#>"/>
+<input type="hidden" name="pic_url2" value="<#PRINT pic_url2#>"/>
+<input type="hidden" name="pic_url3" value="<#PRINT pic_url3#>"/>
+</form>
+<div id="line" align="center">
+<a href="javascript:void(0)" id="add_btn"><input type="button" class="space02" value="内容を確認" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>
