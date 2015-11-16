@@ -9,6 +9,7 @@
     <body>
         <div class="wrapper">
             <div class="header-content">
+                <img src="<#PRINT osusume_pic#>" alt="osusume">
                 <div class="header-text">
                 <a href="detail.php?id=<#PRINT osusume_id#>">
                 <!-- アダム、ここ使ってって！<#PRINT osusume_pic#> -->
@@ -20,36 +21,38 @@
 
 <!-- コンテンツ tiled content-->
 
-			<#LOOP_START dataAll#>
-				<#LOOP_PRINT openTag#>
-				<a href="detail.php?id=<#LOOP_PRINT id#>">
-                <div class="tiled-<#LOOP_PRINT classLR#>">
-                    <div class="<#LOOP_PRINT classLR#>-inner">
-                        <div class="thumb">
-                            <div class="thumb-image">
-                                <img src="<#LOOP_PRINT pic_url#>" alt="content">
-                            </div>
-                            <div class="thumb-desc">
-                                <p><#LOOP_PRINT shop_name#></p>
-                            </div>
-                        </div>
-                        <div class="coupon-title">
-                            <h3><#LOOP_PRINT title#></h3>
-                            <div class="coupon-price">
-                                <img src="img/yen-icon.png" alt="icon" style="display:inline;">
-                                <p style="display:inline;"><#LOOP_PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#LOOP_PRINT after_price#>円</span></p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="coupon-map">
-                            <img src="img/map-icon.png" alt="map-icon" style="display: inline;">
-                            <p style="display:inline;">最寄駅：<#LOOP_PRINT shop_station#></p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-				<#LOOP_PRINT closeTag#>
-			<#LOOP_END dataAll#>
+			<div>
+                <#LOOP_START dataAll#>
+			        <#LOOP_PRINT openTag#>
+			        <a href="detail.php?id=<#LOOP_PRINT id#>">
+			                    <div class="tiled-<#LOOP_PRINT classLR#>">
+			                        <div class="<#LOOP_PRINT classLR#>-inner">
+			                            <div class="thumb">
+			                                <div class="thumb-image">
+			                                    <img src="<#LOOP_PRINT pic_url#>" alt="content">
+			                                </div>
+			                                <div class="thumb-desc">
+			                                    <p><#LOOP_PRINT shop_name#></p>
+			                                </div>
+			                            </div>
+			                            <div class="coupon-title">
+			                                <h3><#LOOP_PRINT title#></h3>
+			                                <div class="coupon-price">
+			                                    <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+			                                    <p style="display:inline;"><#LOOP_PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#LOOP_PRINT after_price#>円</span></p>
+			                                </div>
+			                            </div>
+			                            <hr>
+			                            <div class="coupon-map">
+			                                <img src="img/map-icon.png" alt="map-icon" style="display: inline;">
+			                                <p style="display:inline;">最寄駅：<#LOOP_PRINT shop_station#></p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    </a>
+			        <#LOOP_PRINT closeTag#>
+			    <#LOOP_END dataAll#>
+            </div>
 
             
 <!--/ コンテンツ tiled content-->

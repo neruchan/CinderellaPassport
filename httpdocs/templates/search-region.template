@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <title>ティアリーアプリ</title>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+/*LINK HOVER*/
+            $('.mypage-item').on('touchstart',function(){
+                $(this).css({"background":"#e4e4e4"});
+            });
+            $('.mypage-item').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+/*END OF LINK HOVER*/
+
+    });
+</script>
+
+</head>
+    <body>
+    <div class="wrapper">
+        <div class="title-bluebox" style="text-align:left;">
+            <strong>東京</strong>
+        </div>
+        <div class="content-wrapper">
+            <a href="#" class="mypage-item-a"><div class="mypage-item">
+                    <p>表参道・青山</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>渋谷・原宿</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>銀座・日本橋・丸の内</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>新宿・高田馬場・早稲田</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>恵比寿・代官山・中目黒</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>池袋・目白</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>赤坂・六本木・麻布</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>中野・高円寺・阿佐ヶ谷・荻窪</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>吉祥寺・三鷹</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>赤羽・十条</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+            <a href="#"><div class="mypage-item">
+                    <p>その他</p><img src="img/mypage-arrow.png" alt="arrow">
+                </div></a><hr class="gray-line-full">
+        </div>
+        <div style="width:100%;margin-bottom:10px;"></div>
+
+<!-- コンテンツ tiled content-->
+
+			<div>
+                <#LOOP_START dataAll#>
+			        <#LOOP_PRINT openTag#>
+			        <a href="detail.php?id=<#LOOP_PRINT id#>">
+			                    <div class="tiled-<#LOOP_PRINT classLR#>">
+			                        <div class="<#LOOP_PRINT classLR#>-inner">
+			                            <div class="thumb">
+			                                <div class="thumb-image">
+			                                    <img src="<#LOOP_PRINT pic_url#>" alt="content">
+			                                </div>
+			                                <div class="thumb-desc">
+			                                    <p><#LOOP_PRINT shop_name#></p>
+			                                </div>
+			                            </div>
+			                            <div class="coupon-title">
+			                                <h3><#LOOP_PRINT title#></h3>
+			                                <div class="coupon-price">
+			                                    <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+			                                    <p style="display:inline;"><#LOOP_PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#LOOP_PRINT after_price#>円</span></p>
+			                                </div>
+			                            </div>
+			                            <hr>
+			                            <div class="coupon-map">
+			                                <img src="img/map-icon.png" alt="map-icon" style="display: inline;">
+			                                <p style="display:inline;">最寄駅：<#LOOP_PRINT shop_station#></p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    </a>
+			        <#LOOP_PRINT closeTag#>
+			    <#LOOP_END dataAll#>
+            </div>
+
+            
+<!--/ コンテンツ tiled content-->
+    </div>
+    </body>
+</html>

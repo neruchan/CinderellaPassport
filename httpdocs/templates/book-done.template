@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>a
+<head>
     <#INCLUDE ../common/meta_common.php#>
-<!--SCRIPTS-->aasfa
+<!--SCRIPTS-->
     <script src="js/jquery-1.11.3.min.js"></script>
 
     <!--BUTTON HOVER-->
