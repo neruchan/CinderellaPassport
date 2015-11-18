@@ -15,7 +15,7 @@ require_once "cinderella/ipfDB.php";
 /***********************
  * セッション格納処理
 ***********************/
-
+//test
 // require_once "cinderella/user_class/startingClass.php";
 // $ins_startingClass = new startingClass;
 // $sysinfo = $ins_startingClass->getStartingData(9);	//9はログインチェックしない
