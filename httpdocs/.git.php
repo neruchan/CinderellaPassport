@@ -7,11 +7,14 @@
 	 *		https://gist.github.com/1809044
 	 */
 	// The commands
-	
 	$commands = array(
 		'echo $PWD',
 		'whoami',
-		'git pull origin dev',
+		'git pull',
+		'git status',
+		'git submodule sync',
+		'git submodule update',
+		'git submodule status',
 	);
 	// Run the commands for output
 	$output = '';
