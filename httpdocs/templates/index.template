@@ -12,7 +12,7 @@
                 <img src="<#PRINT osusume_pic#>" alt="osusume">
                 <div class="header-text">
                 <a href="detail.php?id=<#PRINT osusume_id#>">
-                This is the updated one xxx
+                This is the updated one xxx by neru
                     <h1><#PRINT osusume_shopname#></h1>
                     <h3><#PRINT osusume_title#><br><#PRINT osusume_before#>円 &#8594;<span style="color:red;font-weight:bold;"> <#PRINT osusume_after#>円</span></h3>
                 </a>
