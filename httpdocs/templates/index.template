@@ -30,10 +30,10 @@
 			                            <div class="thumb">
 			                                <div class="thumb-image">
 			                                    <img src="<#LOOP_PRINT pic_url#>" alt="content">
-			                                    <div class="bookmark-icon-home">
-                                                    <!--ブックマーク二ついて"star.png"と"star-unselected.png"-->
-			                                        <img src="img/star-unselected.png" alt="star">
-			                                    </div>
+			                                </div>
+			                                <div class="bookmark-icon-home">
+                                                <!--ブックマーク二ついて"star.png"と"star-unselected.png"-->
+			                                    <img src="img/star-unselected.png" alt="star">
 			                                </div>
 			                                <div class="thumb-desc">
 			                                    <p><#LOOP_PRINT shop_name#></p>

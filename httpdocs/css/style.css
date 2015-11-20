@@ -203,10 +203,11 @@ background-color: #ebebeb;
 }
 .bookmark-icon-home {
     position: absolute;
-    top: 15%;
+    top: 2%;
     right: 3%;
     height: auto;
     width: 15%;
+    z-index: 10;
 }
 .bookmark-icon-home img {
     width: 100%;
