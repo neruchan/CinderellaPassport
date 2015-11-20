@@ -197,8 +197,18 @@ background-color: #ebebeb;
     width: 30px;
     height: auto;
 }
-
 .bookmark-icon img{
+    width: 100%;
+    height: auto;
+}
+.bookmark-icon-home {
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    height: auto;
+    width: 15%;
+}
+.bookmark-icon-home img {
     width: 100%;
     height: auto;
 }
