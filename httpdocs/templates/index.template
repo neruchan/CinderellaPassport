@@ -11,7 +11,7 @@
                     setTimeout(function(){
                         $(".bookmark-icon-home > img").attr("src","img/star.png");
                     }, 300)
-                    $(".bookmark-icon-home > img").removeAttr("style");
+                    /*$(".bookmark-icon-home > img").removeAttr("style");*/
                 });
             });
         </script>
