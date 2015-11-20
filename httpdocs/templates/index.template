@@ -7,7 +7,7 @@
         <script>
             $(document).ready(function(){
                 $(".bookmark-icon-home").click(function(){
-                    $(".bookmark-icon-home > img").attr("src","star.png");
+                    $(".bookmark-icon-home > img").attr("src","img/star.png");
                 });
             });
         </script>
@@ -30,7 +30,7 @@
 			<div>
                 <#LOOP_START dataAll#>
 			        <#LOOP_PRINT openTag#>
-			        <a href="detail.php?id=<#LOOP_PRINT id#>">
+			        
 			                    <div class="tiled-<#LOOP_PRINT classLR#>">
 			                        <div class="<#LOOP_PRINT classLR#>-inner">
 			                            <div class="thumb">
@@ -45,6 +45,7 @@
 			                                    <p><#LOOP_PRINT shop_name#></p>
 			                                </div>
 			                            </div>
+			                            <a href="detail.php?id=<#LOOP_PRINT id#>">
 			                            <div class="coupon-title">
 			                                <h3><#LOOP_PRINT title#></h3>
 			                                <div class="coupon-price">
@@ -52,6 +53,7 @@
 			                                    <p style="display:inline;"><#LOOP_PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#LOOP_PRINT after_price#>円</span></p>
 			                                </div>
 			                            </div>
+			                            </a>
 			                            <hr>
 			                            <div class="coupon-map">
 			                                <img src="img/map-icon.png" alt="map-icon" style="display: inline;">
@@ -59,7 +61,6 @@
 			                            </div>
 			                        </div>
 			                    </div>
-			                    </a>
 			        <#LOOP_PRINT closeTag#>
 			    <#LOOP_END dataAll#>
             </div>
