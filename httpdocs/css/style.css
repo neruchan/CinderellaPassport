@@ -213,9 +213,6 @@ ul{
 .bookmark-icon-home img {
     width: 100%;
     height: auto;
-    transition: all 0.3s;
-    transform: scale(200%);
-    opacity: 0;
 }
 
 .header-content2 img{
