@@ -279,20 +279,19 @@ ul{
     margin: 0 auto;
 }
 
-.tiled-left{
+.tiled-left, .tiled-right{
     float: left;
     width: 50%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    position: relative;
 }
-
+.tiled-left{
+    float: left;
+}
 .tiled-right{
     float: right;
-    width: 50%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .left-inner{
