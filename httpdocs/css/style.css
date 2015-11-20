@@ -280,7 +280,6 @@ ul{
 }
 
 .tiled-left, .tiled-right{
-    float: left;
     width: 50%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
