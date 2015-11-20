@@ -34,8 +34,9 @@ ul{
 }
 
 .wrapper{
-width: 100%;
-background-color: #ebebeb;
+    width: 100%;
+    background-color: #ebebeb;
+    padding-bottom: 1px;
 }
 
 .content-wrapper{
