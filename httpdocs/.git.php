@@ -10,6 +10,8 @@
 	$commands = array(
 		'echo $PWD',
 		'whoami',
+        'git clean -f -d',
+		'git checkout /var/www/vhosts/cinderella.tiary.jp/',
 		'git pull origin dev',
 		'git status',
 		'git submodule sync',
