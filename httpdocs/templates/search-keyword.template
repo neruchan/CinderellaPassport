@@ -8,7 +8,7 @@
 </head>
     <body>
     <div class="wrapper">
-        <#INCLUDE ../common/header.php#>
+        <#INCLUDE ../common/header.template#>
 
 <!-- コンテンツ tiled content-->
 

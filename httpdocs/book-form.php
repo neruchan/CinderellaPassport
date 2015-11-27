@@ -42,8 +42,43 @@ if(!$coupon_id){
 	header('Location: index.php');
 }
 
+$PAGE_VALUE['header_title'] = "";
+$couponData = $cinderella->selectCouponByID($coupon_id);
 
-
+if(count($couponData)>0){
+    
+    $PAGE_VALUE['header_title'] = $couponData["shop_name"];
+    
+    $PAGE_VALUE['shop_id'] = $couponData["shop_id"];
+	$PAGE_VALUE['shop_name'] = $couponData["shop_name"];
+	$PAGE_VALUE['shop_address'] = $couponData["address"];
+	$PAGE_VALUE['shop_email'] = $couponData["email"];
+	$PAGE_VALUE['shop_phone'] = $couponData["phone"];
+	$PAGE_VALUE['shop_station'] = $couponData["station"];
+	$PAGE_VALUE['shop_pref'] = $couponData["pref"];
+	$PAGE_VALUE['shop_zip'] = $couponData["zip"];
+	$PAGE_VALUE['shop_pic1'] = $couponData["shop_pic1"];
+	$PAGE_VALUE['shop_pic2'] = $couponData["shop_pic2"];
+	$PAGE_VALUE['shop_pic3'] = $couponData["shop_pic3"];
+    $PAGE_VALUE['shop_access'] = $couponData["access"];
+    $PAGE_VALUE['shop_website'] = $couponData["website"];
+    $PAGE_VALUE['shop_detail'] = $couponData["detail"];
+    $PAGE_VALUE['shop_jikan'] = $couponData["eigyo_jikan"];
+    $PAGE_VALUE['shop_holiday'] = $couponData["holiday"];
+    $PAGE_VALUE['shop_average'] = $couponData["average_price"];
+	
+	$PAGE_VALUE['title'] = $couponData["title"];
+	$PAGE_VALUE['category'] = $coupon_category[$couponData['category']];
+	$PAGE_VALUE['description'] = $couponData["description"];
+	$PAGE_VALUE['coupon_pic'] = $couponData["pic_url"];
+    $PAGE_VALUE['addtime'] = $couponData["addtime"];
+    $PAGE_VALUE['exp_date_from'] = $couponData["exp_date_from"];
+	$PAGE_VALUE['exp_date_until'] = $couponData["exp_date_until"];
+    $PAGE_VALUE['warning'] = $couponData["warning"];
+	
+	$PAGE_VALUE['before_price'] = $couponData["before_price"];
+	$PAGE_VALUE['after_price'] = $couponData["after_price"];
+}
 
 
 $template_file = "book-form.template";

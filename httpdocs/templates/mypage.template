@@ -38,7 +38,7 @@
 <body>
     <div class="wrapper">
 <!--***HEADER***-->
-        <#INCLUDE ../common/header.php#>
+        <#INCLUDE ../common/header.template#>
 <!--/***HEADER***-->
         <div class="top-content-margin"></div>
         <div class="title-bluebox" style="text-align:left;">

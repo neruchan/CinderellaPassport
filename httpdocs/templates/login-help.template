@@ -7,7 +7,7 @@
     <body>
         <div class="wrapper">
 <!--***HEADER***-->
-        <#INCLUDE ../common/header.php#>
+        <#INCLUDE ../common/header.template#>
 <!--/***HEADER***-->
             <div style="height:3em;"></div>
             <div class="header-content2 login">

@@ -23,7 +23,7 @@
     <body>
         <div class="wrapper">
 <!--***HEADER***-->
-        <#INCLUDE ../common/header.php#>
+        <#INCLUDE ../common/header.template#>
 <!--/***HEADER***-->
             <a href="index.php"><div class="top-close"><img src="img/close-button.png" alt="close"></div></a>
 

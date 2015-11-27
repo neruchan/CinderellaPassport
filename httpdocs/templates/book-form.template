@@ -26,7 +26,7 @@
 <body>
     <div class="wrapper">
 <!--***HEADER***-->
-        <#INCLUDE ../common/header.php#>
+        <#INCLUDE ../common/header.template#>
 <!--/***HEADER***-->
 
         <div style="height:3em;"></div>
@@ -35,23 +35,23 @@
         </div>
         <div class="content-wrapper" style="padding-top:14px;padding-bottom:1px;">
             <div class="desc-text">
-                <p>予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。予約についての説明が入ります。</p>
+                <p><#PRINT warning#></p>
             </div>
             <div class="header-content2">
-                <img src="img/afloat.jpg" alt="banner">
+                <img src="<#PRINT coupon_pic#>" alt="banner">
                 <div class="head-desc">
-                    <strong>【AFLOATで可愛くなる★特別プラン】カット</strong>
-                    <p>クーポンの詳細などが載ります。クーポンの詳細などが載りま す。クーポンの詳細などが載ります。
+                    <strong><#PRINT title#></strong>
+                    <p><#PRINT description#>
                     </p>
                 </div>
                 <div class="head-footwrap clearfix">
                     <div class="head-footleft">
                         <p>有効期限
-                            <br>9月2日(水)~9/28(月)まで</p>
+                            <br><#PRINT exp_date_from#>~<#PRINT exp_date_until#>まで</p>
                     </div>
                     <div class="head-footright">
                         <img src="img/yen-icon.png" alt="icon" style="display:inline;">
-                        <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                        <p style="display:inline;"><#PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#PRINT after_price#>円</span>
                         </p>
                     </div>
                 </div>

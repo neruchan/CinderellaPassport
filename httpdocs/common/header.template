@@ -1,4 +1,4 @@
-<div class="top-bar"><div class="top-title"><strong>AFLOAT JAPAN アフロートジャパン</strong></div><a href="javascript:history.back()"><div class="top-image"><img src="img/back-button.png" alt="back"></div></a></div>
+<div class="top-bar"><div class="top-title"><strong><#PRINT header_title#></strong></div><a href="javascript:history.back()"><div class="top-image"><img src="img/back-button.png" alt="back"></div></a></div>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.top-image').on('touchstart',function(){
