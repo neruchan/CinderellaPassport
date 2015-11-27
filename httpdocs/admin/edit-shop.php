@@ -70,39 +70,42 @@ if($_POST["add_flag"]!=""){
 	
 	$error_flag = 0;
 	if($_FILES['article_img1']['tmp_name'] != ''){
+        $domainUrl = $INI_DATA['domain_url'];
 		$uploaddir = $INI_DATA['upload_path'];
 		$basename = basename($_FILES['article_img1']['tmp_name']);
 		$fileext = strrchr($_FILES['article_img1']['name'], '.');
 		$filename = $basename . $fileext;
 		$uploadfile = $uploaddir . "/" . $filename;
 		$is_uploaded = move_uploaded_file($_FILES['article_img1']['tmp_name'], $uploadfile);
-		$_POST["pic_url1"] = "http://press.tiary.jp/_dev/cinderella/pjpic/".$filename;
+		$_POST["pic_url1"] = $domainUrl."".$filename;
 	}else{
 		$PAGE_VALUE[article_img1_err] ='<tr><td></td><td><p class="red">※必須項目です。正しくご入力ください。</p></td></tr>';
 		
 	}
     
     if($_FILES['article_img2']['tmp_name'] != ''){
+        $domainUrl = $INI_DATA['domain_url'];
 		$uploaddir = $INI_DATA['upload_path'];
 		$basename = basename($_FILES['article_img2']['tmp_name']);
 		$fileext = strrchr($_FILES['article_img2']['name'], '.');
 		$filename = $basename . $fileext;
 		$uploadfile = $uploaddir . "/" . $filename;
 		$is_uploaded = move_uploaded_file($_FILES['article_img2']['tmp_name'], $uploadfile);
-		$_POST["pic_url2"] = "http://press.tiary.jp/_dev/cinderella/pjpic/".$filename;
+		$_POST["pic_url2"] = $domainUrl."".$filename;
 	}else{
 		$PAGE_VALUE[article_img2_err] ='<tr><td></td><td><p class="red">※必須項目です。正しくご入力ください。</p></td></tr>';
 		
 	}
     
     if($_FILES['article_img3']['tmp_name'] != ''){
+        $domainUrl = $INI_DATA['domain_url'];
 		$uploaddir = $INI_DATA['upload_path'];
 		$basename = basename($_FILES['article_img3']['tmp_name']);
 		$fileext = strrchr($_FILES['article_img3']['name'], '.');
 		$filename = $basename . $fileext;
 		$uploadfile = $uploaddir . "/" . $filename;
 		$is_uploaded = move_uploaded_file($_FILES['article_img3']['tmp_name'], $uploadfile);
-		$_POST["pic_url3"] = "http://press.tiary.jp/_dev/cinderella/pjpic/".$filename;
+		$_POST["pic_url3"] = $domainUrl."".$filename;
 	}else{
 		$PAGE_VALUE[article_img3_err] ='<tr><td></td><td><p class="red">※必須項目です。正しくご入力ください。</p></td></tr>';
 		

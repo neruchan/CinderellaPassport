@@ -61,13 +61,14 @@ if($_POST["add_flag"]!=""){
 	
 	$error_flag = 0;
 	if($_FILES['article_img']['tmp_name'] != ''){
+        $domainUrl = $INI_DATA['domain_url'];
 		$uploaddir = $INI_DATA['upload_path'];
 		$basename = basename($_FILES['article_img']['tmp_name']);
 		$fileext = strrchr($_FILES['article_img']['name'], '.');
 		$filename = $basename . $fileext;
 		$uploadfile = $uploaddir . "/" . $filename;
 		$is_uploaded = move_uploaded_file($_FILES['article_img']['tmp_name'], $uploadfile);
-		$_POST["up_img"] = "http://press.tiary.jp/_dev/cinderella/pjpic/".$filename;
+		$_POST["up_img"] = $domainUrl."".$filename;
 	}else{
 		$PAGE_VALUE[article_img_err] ='<tr><td></td><td><p class="red">※必須項目です。正しくご入力ください。</p></td></tr>';
 		$error_flag = 1;
