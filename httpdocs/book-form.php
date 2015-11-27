@@ -28,7 +28,7 @@ $ins_ipfTemplate = new ipfTemplate();
 $ins_ipfDB = new ipfDB;
 $ins_ipfDB->ini("cinderella");
 
-// require_once "define.php";
+ require_once "define.php";
 /***********************
  * 画面表示処理
 ***********************/
@@ -43,6 +43,23 @@ if(!$coupon_id){
 }
 
 $PAGE_VALUE['header_title'] = "";
+
+$PAGE_VALUE["day_1"] = setOptions($open_days,$_POST['day_1']);
+$PAGE_VALUE["month_1"] = setOptions($open_months,$_POST['month_1']);
+$PAGE_VALUE["hour_1"] = setOptions($open_hours,$_POST['hour_1']);
+$PAGE_VALUE["minute_1"] = setOptions($open_minutes,$_POST['minute_1']);
+
+$PAGE_VALUE["day_2"] = setOptions($open_days,$_POST['day_2']);
+$PAGE_VALUE["month_2"] = setOptions($open_months,$_POST['month_2']);
+$PAGE_VALUE["hour_2"] = setOptions($open_hours,$_POST['hour_2']);
+$PAGE_VALUE["minute_2"] = setOptions($open_minutes,$_POST['minute_2']);
+
+$PAGE_VALUE["day_3"] = setOptions($open_days,$_POST['day_3']);
+$PAGE_VALUE["month_3"] = setOptions($open_months,$_POST['month_3']);
+$PAGE_VALUE["hour_3"] = setOptions($open_hours,$_POST['hour_3']);
+$PAGE_VALUE["minute_3"] = setOptions($open_minutes,$_POST['minute_3']);
+
+
 $couponData = $cinderella->selectCouponByID($coupon_id);
 
 if(count($couponData)>0){
