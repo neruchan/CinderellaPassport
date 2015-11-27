@@ -162,8 +162,10 @@ function setAscNumList($start, $end, $add = 1) {
 	return $ret;
 }
 
+
+
 //setPulldown関数
-function setPulldown($list, $default = "", $format = "%s") {
+function setOptions($list, $default = "", $format = "%s") {
 	$ret = "";
 	if(is_array($list)) {
 		foreach($list as $key => $val) {
