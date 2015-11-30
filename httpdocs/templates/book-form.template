@@ -64,7 +64,7 @@
         <div class="content-wrapper">
 
 <!--FORM STARTS-->
-            <form action="book-confirm.php" id="book-form" name="book-form">
+            <form action="" id="book-form" name="book-form" method="post">
             <div class="form-lightbox">
                 第1希望日
             </div>
@@ -170,6 +170,7 @@
                     </td>
                 </tr>
             </table>
+            <#PRINT err_bookdate#>
             <div class="title-bluebox">
                 <strong>会員様情報</strong>
             </div>
@@ -189,6 +190,7 @@
             </table>
             <div style="text-align:right;width:95%;margin:0 auto 1em auto;color:#19acff;"><a href="#"><u>会員情報を修正する</u></a></div>
             <!--<input type="submit" class="orange-button" style="border-style: none;font-size:1em;font-weight:bold;display:block;" value="送信する">-->
+            <input type="hidden" name="book_flag" value="book_flag"/>
             <div class="orange-button" onClick="document.getElementById('book-form').submit();">送信する</div>
             </form>
 <!--FORM ENDS-->

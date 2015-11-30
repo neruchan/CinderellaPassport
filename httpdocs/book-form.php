@@ -43,6 +43,7 @@ if(!$coupon_id){
 }
 
 $PAGE_VALUE['header_title'] = "";
+$PAGE_VALUE['err_bookdate'] = "";
 
 $PAGE_VALUE["day_1"] = setOptions($open_days,$_POST['day_1']);
 $PAGE_VALUE["month_1"] = setOptions($open_months,$_POST['month_1']);
@@ -95,6 +96,51 @@ if(count($couponData)>0){
 	
 	$PAGE_VALUE['before_price'] = $couponData["before_price"];
 	$PAGE_VALUE['after_price'] = $couponData["after_price"];
+    
+    $userid=$sysinfo['user_id'];
+    if(!$userid){
+        header('Location: login.php');
+    }
+    
+    $data = json_decode(file_get_contents('http://tiary.jp/app/member_detail.php?i='.$userid));
+
+    $status = $data->{'status'};
+
+    if($status != "OK"){
+        header('Location: index.php');
+    }
+
+    $temp = $data->{'result'};
+    $userData = get_object_vars($temp[0]);
+    
+    
+    
+}
+
+
+if($_POST['book_flag']){
+    $isValid = true;
+    if(!$_POST['day_1'] || 
+       !$_POST['month_1'] || 
+       !$_POST['hour_1'] || !
+       !$_POST['minute_1'] ||
+       !$_POST['day_2'] || 
+       !$_POST['month_2'] || 
+       !$_POST['hour_2'] || 
+       !$_POST['minute_2'] || 
+       !$_POST['day_3'] || 
+       !$_POST['month_3'] || 
+       !$_POST['hour_3'] || 
+       !$_POST['minute_3'] || 
+      ){
+        $isValid = false;
+        $PAGE_VALUE['err_bookdate'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
+     }
+    
+    if($isValid){
+        require_once "book-confirm.php";
+        exit();
+    }
 }
 
 
