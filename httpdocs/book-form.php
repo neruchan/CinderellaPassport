@@ -131,7 +131,7 @@ if($_POST['book_flag']){
        !$_POST['day_3'] || 
        !$_POST['month_3'] || 
        !$_POST['hour_3'] || 
-       !$_POST['minute_3'] || 
+       !$_POST['minute_3']
       ){
         $isValid = false;
         $PAGE_VALUE['err_bookdate'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
