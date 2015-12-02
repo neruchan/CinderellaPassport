@@ -55,6 +55,7 @@
         $(document).ready(function(){
             $('#input-comment').click(function(){
                 $('.comment-entrywrapper').addClass('comment-display');
+                $('#comment-write').focus();
             });
         });
     </script>
@@ -67,8 +68,12 @@ $(function(){
             $(".comment-modal").css({"z-index":"10","opacity":"1"});
         });
 		$("#comment_btn").click(function(){
-			alert("ポテト");
-            $("#comment_form").submit();
+            $(".comment-popup").removeAttr("style");
+            $(".comment-modal").removeAttr("style");
+            setTimeout(function(){
+                alert("ポテト");
+                $("#comment_form").submit();
+            }, 300);
 		});
 });
 
