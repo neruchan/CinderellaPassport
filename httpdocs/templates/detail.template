@@ -12,6 +12,9 @@
 <!--SCRIPTS-->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <!--LOAD FANCYBOX FOR COMMENTS-->
+    <script src="../fancybox-plugin/jquery.fancybox.js"></script>
+    <link rel="stylesheet" href="../fancybox-plugin/jquery.fancybox.css" />
 <!--/SCRIPTS-->
 
 <!--SWIPER SLIDER-->
@@ -60,31 +63,53 @@
         });
     </script>
 <!--END OF COMMENT VIEW-->
+
+<!--POPUP BUTTON-->
+    <script>
+    $(document).ready(function(){
+            $("#popup_button").click(function(){
+
+                //スクロールを予防する
+                document.ontouchmove = function(event){
+                    event.preventDefault();
+                }
+
+                $(".comment-popup").css({"z-index":"10","opacity":"1"});
+                $(".comment-modal").css({"z-index":"10","opacity":"1","transform":"translate(-50%,-50%)"});
+            });
+            $("#comment_btn").click(function(){
+                $(".comment-popup").removeAttr("style");
+                $(".comment-modal").removeAttr("style");
+                setTimeout(function(){
+                    alert("ポテト");
+                    $("#comment_form").submit();
+                }, 300);
+            });
+    });
+
+    </script>
+<!--END OF POPUP BUTTON-->
+
+<!--FANCY BOX IMAGE VIEWER (COMMENTS)-->
+    <script type="text/javascript">
+        $(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+    </script>
+<!--END OF FANCY BOX-->
 </head>
-<script>
-$(function(){
-        $("#popup_button").click(function(){
-
-            //スクロールを予防する
-            document.ontouchmove = function(event){
-                event.preventDefault();
-            }
-
-            $(".comment-popup").css({"z-index":"10","opacity":"1"});
-            $(".comment-modal").css({"z-index":"10","opacity":"1","transform":"translate(-50%,-50%)"});
-        });
-		$("#comment_btn").click(function(){
-            $(".comment-popup").removeAttr("style");
-            $(".comment-modal").removeAttr("style");
-            setTimeout(function(){
-                alert("ポテト");
-                $("#comment_form").submit();
-            }, 300);
-		});
-});
-
-
-</script>
 
 <body>
     <div class="wrapper">
@@ -234,7 +259,7 @@ $(function(){
                     <!--COMMENT CONTENT-->
                     <div class="content-block reply-content"><#LOOP_PRINT comment#></div>
                     <!--/COMMENT CONTENT-->
-                    <div class="content-block" style="margin-bottom:16px;"><img src="<#LOOP_PRINT pic_url#>" style="width:100%;height:auto;"></div>
+                    <div class="content-block" style="margin-bottom:16px;"><a class="fancybox-effects-d" href="<#LOOP_PRINT pic_url#>"><img src="<#LOOP_PRINT pic_url#>" style="width:30%;height:auto;"></a></div>
                     <a href="#"><div class="content-block reply-share" style="width:60%;"><img src="img/share-button.png">このコメントをシェアする</div></a><div class="content-block reply-report" style="width:40%;"><a href="#"><u>通報する</u></a></div>
                 </div>
                 <hr id="gray-thin" style="margin-top:16px;">
