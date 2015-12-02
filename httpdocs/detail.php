@@ -39,7 +39,7 @@ if($sysinfo['user_id']){
     $PAGE_VALUE['clickable_comment_tag'] = "id='login-input-comment'";
 }
 else{
-    $PAGE_VALUE['comment_login_text'] = '<span id="before-login" style="color:red;font-size:10px;"><a href="login.php"「ログイン必要」</a></span>';
+    $PAGE_VALUE['comment_login_text'] = '<span id="before-login" style="color:red;font-size:10px;"><a href="login.php">「ログイン必要」</a></span>';
     $PAGE_VALUE['clickable_comment_tag'] = "";
 }
 
