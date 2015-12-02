@@ -64,6 +64,12 @@
 <script>
 $(function(){
         $("#popup_button").click(function(){
+
+            //スクロールを予防する
+            document.ontouchmove = function(event){
+                event.preventDefault();
+            }
+
             $(".comment-popup").css({"z-index":"10","opacity":"1"});
             $(".comment-modal").css({"z-index":"10","opacity":"1"});
         });
