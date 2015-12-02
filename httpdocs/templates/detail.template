@@ -9,11 +9,7 @@
 
     <title>ティアリーアプリ</title>
 
-<<<<<<< HEAD
-<!--SCRIPTS GW RUBAH LAGI DISINI-->
-=======
-<!--SCRIPTS　APAAN NIH!"-->
->>>>>>> origin/dev
+<!--SCRIPTS-->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/swiper.min.js"></script>
 <!--/SCRIPTS-->
