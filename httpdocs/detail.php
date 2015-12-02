@@ -32,6 +32,18 @@ require_once "define.php";
 /***********************
  * 画面表示処理
 ***********************/
+
+//ログインした状態
+if($sysinfo['user_id']){
+    $PAGE_VALUE['comment_login_text'] = "";
+    $PAGE_VALUE['clickable_comment_tag'] = "id='login-input-comment'";
+}
+else{
+    $PAGE_VALUE['comment_login_text'] = '<span id="before-login" style="color:red;font-size:10px;">「ログイン必要」</span>';
+    $PAGE_VALUE['clickable_comment_tag'] = "";
+}
+
+
 //自動ログイン
 
 $coupon_id = $_GET['id'];
@@ -46,13 +58,14 @@ $PAGE_VALUE['comment'] = $_POST['comment'];
 if($_POST['comment_flag']){
     $error_flag = 0;
     if($_FILES['comment_img']['tmp_name'] != ''){
-		$uploaddir = $INI_DATA['upload_path'];
+		$domainUrl = $INI_DATA['domain_url'];
+        $uploaddir = $INI_DATA['upload_path'];
 		$basename = basename($_FILES['comment_img']['tmp_name']);
 		$fileext = strrchr($_FILES['comment_img']['name'], '.');
 		$filename = $basename . $fileext;
 		$uploadfile = $uploaddir . "/" . $filename;
 		$is_uploaded = move_uploaded_file($_FILES['comment_img']['tmp_name'], $uploadfile);
-		$_POST["up_img"] = "http://press.tiary.jp/_dev/cinderella/pjpic/".$filename;
+		$_POST["up_img"] = $domainUrl."".$filename;
 	}else{
 		$PAGE_VALUE[comment_img_err] ='<tr><td></td><td><p class="red">※必須項目です。正しくご入力ください。</p></td></tr>';
 		//$error_flag = 1;
