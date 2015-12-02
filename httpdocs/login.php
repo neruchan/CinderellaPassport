@@ -34,9 +34,11 @@ $ins_ipfDB->ini("myautologin");
  * 画面表示処理
 ***********************/
 //自動ログイン
-
+$PAGE_VALUE['header_title'] = "ログイン";
 $PAGE_VALUE['iderror'] = "";
 $PAGE_VALUE['login_id'] = $_POST['login_id'];
+
+$PAGE_VALUE['referrer'] = $_SERVER['HTTP_REFERER'];
 
 // require_once "common/user_main.php";
 
@@ -91,8 +93,13 @@ if($_REQUEST["login_btn"]!=""){
 			));
 			//setcookie('ci_session',$ci_session_data);
 			setcookie('ci_session',$ci_session_data,0,'/');
+            
+            if(isset($_REQUEST['redirurl'])) 
+               $url = $_REQUEST['redirurl']; // holds url for last page visited.
+            else 
+               $url = "profile_user.php"; // default page for 
 			
-			header('Location: profile_user.php');
+			header('Location: '.$url);
 			exit;
         }
 		else{

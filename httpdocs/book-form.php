@@ -43,7 +43,9 @@ if(!$coupon_id){
 }
 
 $PAGE_VALUE['header_title'] = "";
-$PAGE_VALUE['err_bookdate'] = "";
+$PAGE_VALUE['err_bookdate1'] = "";
+$PAGE_VALUE['err_bookdate2'] = "";
+$PAGE_VALUE['err_bookdate3'] = "";
 
 $PAGE_VALUE["day_1"] = setOptions($open_days,$_POST['day_1']);
 $PAGE_VALUE["month_1"] = setOptions($open_months,$_POST['month_1']);
@@ -101,17 +103,20 @@ if(count($couponData)>0){
     if(!$userid){
         header('Location: login.php');
     }
+    $userDirect = json_decode(file_get_contents('http://direct.tiary.jp/eccube/api/get_user_status.php?i='.$userid));
+
+    $status = $userDirect->{'status'};
     
-    $data = json_decode(file_get_contents('http://tiary.jp/app/member_detail.php?i='.$userid));
-
-    $status = $data->{'status'};
-
-    if($status != "OK"){
-        header('Location: index.php');
-    }
-
-    $temp = $data->{'result'};
-    $userData = get_object_vars($temp[0]);
+    if($status == "OK"){
+        $tempUserAddressData = $userDirect->{'result'};
+        $userAddressData = get_object_vars($tempUserAddressData);
+        
+        $PAGE_VALUE['name01'] = $userAddressData['name01'];
+	    $PAGE_VALUE['name02'] = $userAddressData['name02'];
+        $PAGE_VALUE['email'] = $userAddressData['email'];
+        $PAGE_VALUE['telephone'] = $userAddressData['tel01']."-".$userAddressData['tel02']."-".$userAddressData['tel03'];
+    }    
+    
     
     
     
@@ -120,23 +125,19 @@ if(count($couponData)>0){
 
 if($_POST['book_flag']){
     $isValid = true;
-    if(!$_POST['day_1'] || 
-       !$_POST['month_1'] || 
-       !$_POST['hour_1'] || !
-       !$_POST['minute_1'] ||
-       !$_POST['day_2'] || 
-       !$_POST['month_2'] || 
-       !$_POST['hour_2'] || 
-       !$_POST['minute_2'] || 
-       !$_POST['day_3'] || 
-       !$_POST['month_3'] || 
-       !$_POST['hour_3'] || 
-       !$_POST['minute_3']
-      ){
+    if($_POST['day_1'] == ""|| $_POST['month_1'] == ""|| $_POST['hour_1'] == ""|| $_POST['minute_1'] =="" ){
         $isValid = false;
-        $PAGE_VALUE['err_bookdate'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
-     }
-    
+        $PAGE_VALUE['err_bookdate1'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
+    }
+    if($_POST['day_2'] == ""|| $_POST['month_2'] == ""|| $_POST['hour_2'] == ""|| $_POST['minute_2']== ""){
+        $isValid = false;
+        $PAGE_VALUE['err_bookdate2'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
+    }
+    if($_POST['day_3'] == ""|| $_POST['month_3'] == ""|| $_POST['hour_3'] == ""|| $_POST['minute_3']== ""){
+        $isValid = false;
+        $PAGE_VALUE['err_bookdate3'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
+    }
+        
     if($isValid){
         require_once "book-confirm.php";
         exit();

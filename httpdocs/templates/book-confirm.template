@@ -5,6 +5,14 @@
     <#INCLUDE ../common/meta_common.php#>
 <!--SCRIPTS-->
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+    function send(i){
+        $(document).ready(function(){
+            $("#myForm").attr("action",i).submit();
+        });
+    }
+
+    </script>
 
     <!--BUTTON HOVER-->
     <script type="text/javascript">
@@ -29,6 +37,8 @@
 </head>
 
     <body>
+    <form method="post" action="">
+    
         <div class="wrapper">
 <!--***HEADER***-->
         <#INCLUDE ../common/header.template#>
@@ -39,20 +49,20 @@
             </div>
             <div class="content-wrapper" style="padding-top:1px;padding-bottom:1px;">
                 <div class="header-content2">
-                    <img src="img/afloat.jpg" alt="banner">
+                    <img src="<#PRINT coupon_pic#>" alt="banner">
                     <div class="head-desc">
-                        <strong>【AFLOATで可愛くなる★特別プラン】カット</strong>
-                        <p>クーポンの詳細などが載ります。クーポンの詳細などが載りま す。クーポンの詳細などが載ります。
+                        <strong><#PRINT title#></strong>
+                        <p><#PRINT description#>
                         </p>
                     </div>
                     <div class="head-footwrap clearfix">
                         <div class="head-footleft">
                             <p>有効期限
-                                <br>9月2日(水)~9/28(月)まで</p>
+                                <br><#PRINT exp_date_from#>~<#PRINT exp_date_until#>まで</p>
                         </div>
                         <div class="head-footright">
                             <img src="img/yen-icon.png" alt="icon" style="display:inline;">
-                            <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                            <p style="display:inline;"><#PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#PRINT after_price#>円</span>
                             </p>
                         </div>
                     </div>
@@ -65,18 +75,18 @@
                 <table class="store-details" style="font-size:14px;">
                     <tr>
                         <td>第1希望日時</td>
-                        <td>2015年10月07日(水)</td>
-                        <td>13:00</td>
+                        <td><#PRINT first_kibou#></td>
+                        <td><#PRINT first_time#></td>
                     </tr>
                     <tr>
                         <td>第2希望日時</td>
-                        <td>2015年10月08日(木)</td>
-                        <td>12:00</td>
+                        <td><#PRINT second_kibou#></td>
+                        <td><#PRINT second_time#></td>
                     </tr>
                     <tr>
                         <td>第3希望日時</td>
-                        <td>2015年10月09日(金)</td>
-                        <td>14:00</td>
+                        <td><#PRINT third_kibou#></td>
+                        <td><#PRINT third_time#></td>
                     </tr>
                 </table>
             </div>
@@ -87,27 +97,27 @@
                 <table class="store-details">
                     <tr>
                         <td>お名前</td>
-                        <td>南ことり</td>
+                        <td><#PRINT name01#></td>
                     </tr>
                     <tr>
                         <td>フリガナ</td>
-                        <td>ミナミコトリ</td>
+                        <td><#PRINT name02#></td>
                     </tr>
                     <tr>
                         <td>電話番号</td>
-                        <td>080-1234-5678</td>
+                        <td><#PRINT telephone#></td>
                     </tr>
                     <tr>
                         <td>メールアドレス</td>
-                        <td>mxcan25@yahoo.co.jp</td>
+                        <td><#PRINT email#></td>
                     </tr>
                 </table>
                 <div style="margin:20px auto;"></div>
-                        <a href="book-done.php"><div class="orange-button">上記の内容で送信する</div></a>
+                        <a href="#check_form" onClick="send('fmail_check.php')"><div class="orange-button">上記の内容で送信する</div></a>
                         <a href="book-form.php"><div class="blue-button"><img src="img/arrow-back.png" alt="modoru">戻る</div></a>
                         </div>
                         <div style="height:50px;"></div>
             </div>
-            
+            </form>
     </body>
 </html>

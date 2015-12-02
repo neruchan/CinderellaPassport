@@ -64,7 +64,7 @@
         <div class="content-wrapper">
 
 <!--FORM STARTS-->
-            <form action="" id="book-form" name="book-form" method="post">
+            <form action="#book-form" id="book-form" name="book-form" method="post">
             <div class="form-lightbox">
                 第1希望日
             </div>
@@ -100,6 +100,7 @@
                     </td>
                 </tr>
             </table>
+            <#PRINT err_bookdate1#>
             <div class="form-lightbox">
                 第2希望日
             </div>
@@ -107,34 +108,35 @@
                 <tr>
                     <td>日にち</td>
                     <td>
-                        <select name="month_1" id="hinichi">
+                        <select name="month_2" id="hinichi">
                             <option value="" selected="selected">--</option>
-                            <#PRINT month_1#>
+                            <#PRINT month_2#>
                         </select>月
                     </td>
                     <td>
-                        <select name="day_1" id="hinichi">
+                        <select name="day_2" id="hinichi">
                             <option value="" selected="selected">--</option>
-                            <#PRINT day_1#>
+                            <#PRINT day_2#>
                         </select>日
                     </td>
                 </tr>
                 <tr>
                     <td>時間</td>
                     <td>
-                        <select name="hour_1" id="time">
+                        <select name="hour_2" id="time">
                             <option value="" selected="selected">--</option>
-                            <#PRINT hour_1#>
+                            <#PRINT hour_2#>
                         </select>時
                     </td>
                     <td>
-                        <select name="minute_1" id="minute">
+                        <select name="minute_2" id="minute">
                             <option value="" selected="selected">--</option>
-                            <#PRINT minute_1#>
+                            <#PRINT minute_2#>
                         </select>分
                     </td>
                 </tr>
             </table>
+            <#PRINT err_bookdate2#>
             <div class="form-lightbox">
                 第3希望日
             </div>
@@ -142,55 +144,61 @@
                 <tr>
                     <td>日にち</td>
                     <td>
-                        <select name="month_1" id="hinichi">
+                        <select name="month_3" id="hinichi">
                             <option value="" selected="selected">--</option>
-                            <#PRINT month_1#>
+                            <#PRINT month_3#>
                         </select>月
                     </td>
                     <td>
-                        <select name="day_1" id="hinichi">
+                        <select name="day_3" id="hinichi">
                             <option value="" selected="selected">--</option>
-                            <#PRINT day_1#>
+                            <#PRINT day_3#>
                         </select>日
                     </td>
                 </tr>
                 <tr>
                     <td>時間</td>
                     <td>
-                        <select name="hour_1" id="time">
+                        <select name="hour_3" id="time">
                             <option value="" selected="selected">--</option>
-                            <#PRINT hour_1#>
+                            <#PRINT hour_3#>
                         </select>時
                     </td>
                     <td>
-                        <select name="minute_1" id="minute">
+                        <select name="minute_3" id="minute">
                             <option value="" selected="selected">--</option>
-                           <#PRINT minute_1#>
+                           <#PRINT minute_3#>
                         </select>分
                     </td>
                 </tr>
             </table>
-            <#PRINT err_bookdate#>
+            <#PRINT err_bookdate3#>
             <div class="title-bluebox">
                 <strong>会員様情報</strong>
             </div>
             <table class="store-details">
                 <tr>
                     <td>お名前</td>
-                    <td>南ことり</td>
+                    <td><#PRINT name01#></td>
+                </tr>
+                <tr>
+                    <td>フリガナ</td>
+                    <td><#PRINT name02#></td>
                 </tr>
                 <tr>
                     <td>電話番号</td>
-                    <td>080-1234-5678</td>
+                    <td><#PRINT telephone#></td>
                 </tr>
                 <tr>
                     <td>メールアドレス</td>
-                    <td>mxcan25@yahoo.co.jp</td>
+                    <td><#PRINT email#></td>
                 </tr>
             </table>
             <div style="text-align:right;width:95%;margin:0 auto 1em auto;color:#19acff;"><a href="#"><u>会員情報を修正する</u></a></div>
             <!--<input type="submit" class="orange-button" style="border-style: none;font-size:1em;font-weight:bold;display:block;" value="送信する">-->
+            <input type="hidden" name="title" value="<#PRINT title#>"/>
             <input type="hidden" name="book_flag" value="book_flag"/>
+            <input type="hidden" name="coupon_id" value="<#PRINT coupon_id#>"/>
             <div class="orange-button" onClick="document.getElementById('book-form').submit();">送信する</div>
             </form>
 <!--FORM ENDS-->

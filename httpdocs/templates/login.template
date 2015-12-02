@@ -31,6 +31,7 @@
 
 <!--LOGIN FORM-->
                 <form action="" id="login-form" method="post" name="login-form">
+                    <input type="hidden" name="redirurl" value="<#PRINT referrer#>" />
                     <label for="username"><strong>ID(メールアドレス)</strong></label><br>
                     <input type="text" id="username" name="login_id" value="<#PRINT login_id#>"><br>
                     <label for="password"><strong>パスワード</strong></label><br>
