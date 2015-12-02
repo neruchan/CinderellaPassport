@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+<!--CSS-->
+    <link rel="stylesheet" href="css/swiper.min.css">
+<!--/CSS-->
+
+    <title>ティアリーアプリ</title>
+
+<!--SCRIPTS-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+<!--/SCRIPTS-->
+
+<!--SWIPER SLIDER-->
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay:3000
+        });
+    });
+    </script>
+<!--END OF SWIPER SLIDER-->
+
+<!--BUTTON HOVER-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+            $('.blue-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#e0eefa,#f3faff)"});
+            });
+            $('.blue-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+            $('.reply-share').on('touchstart',function(){
+                $(this).addClass("reply-noshadow");
+            });
+            $('.reply-share').on('touchend',function(){
+                $(this).removeClass("reply-noshadow");
+            });
+        });
+    </script>
+<!--END OF BUTTON HOVER-->
+<!--COMMENT VIEW-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#input-comment').click(function(){
+                $('.comment-entrywrapper').addClass('comment-display');
+            });
+        });
+    </script>
+<!--END OF COMMENT VIEW-->
+</head>
+<script>
+$(function(){
+        $("#popup_button").click(function(){
+            $(".comment-popup").css({"z-index":"10","opacity":"1"});
+            $(".comment-modal").css({"z-index":"10","opacity":"1"});
+        });
+		$("#comment_btn").click(function(){
+			alert("kentang");
+            $("#comment_form").submit();
+		});
+});
+
+
+</script>
+
+<body>
+    <div class="wrapper">
+        <div class="top-bar">
+            <div class="top-content" style="width:80%;padding-left:3%;color:#72b3d8;"><strong><#PRINT shop_name#></strong></div>
+            <a href="index.php"><div class="top-share"><img src="img/share-button.png" alt="close"></div></a>
+            <a href="index.php"><div class="top-close"><img src="img/close-button.png" alt="close"></div></a>
+        </div>
+        <div style="height:3em;"></div>
+        <div class="header-content2">
+            <img src="<#PRINT coupon_pic#>" alt="banner">
+            <div class="head-desc">
+                <h1><strong><#PRINT title#></strong></h1>
+                <p><#PRINT description#>
+                </p>
+            </div>
+            <div class="head-footwrap clearfix">
+                <div class="head-footleft">
+                    <p>有効期限
+                        <br><#PRINT exp_date_from#>~<#PRINT exp_date_until#>まで</p>
+                </div>
+                <div class="head-footright">
+                    <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                    <p style="display:inline;"><#PRINT before_price#>円 &#8594;<span style="color:red;font-weight:bold;"> <#PRINT after_price#>円</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="book-form.php?id=<#PRINT coupon_id#>">
+        <div class="orange-button">
+            この店舗に予約する
+        </div>
+        </a>
+
+<!--Swiper Slider-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="<#PRINT shop_pic1#>" alt="slide" style="width:100%;height:auto;"></div>
+                <div class="swiper-slide"><img src="<#PRINT shop_pic2#>" alt="slide" style="width:100%;height:auto;"></div>
+                <div class="swiper-slide"><img src="<#PRINT shop_pic3#>" alt="slide" style="width:100%;height:auto;"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+<!--/Swiper Slider-->
+
+        <div class="desc-text">
+            <p><#PRINT shop_detail#>
+            </p>
+        </div>
+        <div class="title-bluebox">
+            <strong>サロン情報</strong>
+        </div>
+        <div class="content-wrapper">
+            <table class="store-details">
+                <tr>
+                    <td style="width:40%;">営業時間</td>
+                    <td><#PRINT shop_jikan#></td>
+                </tr>
+                <tr>
+                    <td>定休日</td>
+                    <td><#PRINT shop_holiday#></td>
+                </tr>
+                <tr>
+                    <td>カット価格</td>
+                    <td><#PRINT shop_average#></td>
+                </tr>
+                <tr>
+                    <td>住所</td>
+                    <td><#PRINT shop_address#></td>
+                </tr>
+                <tr>
+                    <td>アクセス</td>
+                    <td><#PRINT shop_access#></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:0px;">HP</td>
+                    <td style="border-bottom:0px;"><#PRINT shop_website#></td>
+                </tr>
+            </table>
+        </div>
+        <div class="title-bluebox">
+            くーぽんについて
+        </div>
+        <div class="content-wrapper" style="padding-bottom:1px;padding-top:14px;">
+            <div class="desc-text">
+                <p><#PRINT warning#></p>
+            </div>
+            <a href="book-form.php?id=<#PRINT coupon_id#>">
+            <div class="orange-button">
+                この店舗に予約する
+            </div>
+            </a>
+        </div>
+        <div class="title-bluebox">
+            コメント
+        </div>
+        <div class="content-wrapper">
+
+<!--FORM STARTS HERE-->
+            <form action="" enctype="multipart/form-data" id="comment_form" method="post">
+                <div class="comment-wrapper clearfix">
+                    <img src="img/profpic.png" alt="profpic" id="profpic">
+                    <div id="input-comment">コメントする</div>
+                </div>
+
+                <div class="comment-entrywrapper">
+                    <p>本文</p>
+                    <textarea name="comment" id="comment-write" rows="7"><#PRINT comment#></textarea>
+                    <input type="file" id="choose-image" name="comment_img">
+                    <#PRINT comment_img_err#>
+                    <a id="comment_btn" href="javascript:void(0)"><div class="blue-button">コメントする</div></a>
+                </div>
+                
+                <input type="hidden" name="comment_flag" value="comment_flag">
+            </form>
+<!--FORM ENDS HERE-->
+
+<!--            <div class="comment-popup">
+                <div class="comment-modal">
+                    <p>コメント送信しました！</p>
+                    <p>シェアしませんか？</p>
+                    <a href="#"><img src="../img/facebook-icon.png" alt="facebook"></a>
+                    <a href="#"><img src="../img/twitter-icon.png" alt="twitter"></a>
+                    <div class="modal-close" id="comment_btn"><p>戻る</p></div>
+                </div>
+            </div>-->
+
+<#PRINT comment_message_off1#>
+                <hr id="gray-line">
+                <div class="width-wrap">
+                    <p>コメントはありません。</p>
+                </div>
+                <hr id="gray-thin">
+<#PRINT comment_message_off2#>
+
+
+
+<!--COMMENT LOOP-->
+<#PRINT comment_message_on1#>
+    <#LOOP_START dataAllComments#>
+                <div class="reply-wrapper">
+                    <div class="content-block" style="width:5%;"><span class="reply-number"><#LOOP_PRINT no#></span></div>
+                    <div class="content-block" style="width:30%;"><span class="reply-nickname"><#LOOP_PRINT username#></span></div>
+                    <div class="content-block" style="width:30%;"><span class="reply-date"><#LOOP_PRINT addtime#></span></div>
+                    <div class="content-block" style="width:10%;"><span class="reply-time"><#LOOP_PRINT addtime#></span></div>
+                    <!--COMMENT CONTENT-->
+                    <div class="content-block reply-content"><#LOOP_PRINT comment#></div>
+                    <!--/COMMENT CONTENT-->
+                    <div class="content-block" style="margin-bottom:16px;"><img src="<#LOOP_PRINT pic_url#>" style="width:100%;height:auto;"></div>
+                    <a href="#"><div class="content-block reply-share" style="width:60%;"><img src="img/share-button.png">このコメントをシェアする</div></a><div class="content-block reply-report" style="width:40%;"><a href="#"><u>通報する</u></a></div>
+                </div>
+                <hr id="gray-thin" style="margin-top:16px;">
+   <#LOOP_END dataAllComments#>
+<#PRINT comment_message_on2#>
+<!--COMMENT LOOP END-->
+
+                <div class="width-wrap green-title">
+                    <div class="green-square"></div><p style="display:inline;">あなたへのおすすめクーポン</p>
+                </div>
+                <div class="width-wrap">
+                    <#LOOP_START coupon_connection#>
+                    <a href="detail.php?id=<#LOOP_PRINT coupon_id#>"">
+                    <div class="osusume-content">
+                        <img class="img-tenpo" src="<#LOOP_PRINT coupon_image#>" alt="tenpo">
+                        <p><#LOOP_PRINT coupon_title#></p>
+                    </div>
+                    </a>
+                    <#LOOP_END coupon_connection#>
+                </div>
+                
+                <div class="width-wrap green-title">
+                    <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                </div>
+                <#LOOP_START press_matome#>
+                <a href="http://press.tiary.jp/read-user.php?aid=<#LOOP_PRINT article_id#>" target="_blank">
+                <div class="width-wrap">
+                    <div class="img-kiji"><img src="<#LOOP_PRINT article_image#>" alt="kiji" class="thumb-kiji"></div>
+                    <div class="text-kiji">
+                        <p><#LOOP_PRINT article_title#></p>
+                    </div>
+                </div>
+                </a>
+                <hr id="gray-thin">
+                <#LOOP_END press_matome#>
+                
+
+
+        </div>
+        <div style="height:2em;"></div>
+</div>
+            
+    </div>
+</body>
+
+</html>
