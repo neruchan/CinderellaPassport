@@ -527,14 +527,14 @@ ul{
     margin: 0 auto 20px auto;
     opacity: 0;
     height: 0;
-    display: none;
+    visibility: hidden;
     transition: all 0.5s;
 }
 
 .comment-display{
     height: auto;
     opacity: 1;
-    display: block;
+    visibility: visible;
 }
 
 .input-comment {
