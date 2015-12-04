@@ -6,7 +6,7 @@
 </head>
     <body>
         <div class="wrapper">
-            <#INCLUDE ../common/header.php#>
+            <#INCLUDE ../common/header.template#>
             <div style="height:3em;"></div>
             <div class="title-bluebox">
                 <strong>クーポン履歴</strong>
