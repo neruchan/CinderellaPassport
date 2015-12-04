@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+            <#INCLUDE ../common/header.template#>
+            <div style="height:3em;"></div>
+            <div class="header-content2 login" style="padding:20px 10px;">
+                <img src="img/tiary-press.jpg" alt="tiary-press"><br>
+                <p>すでにTiARY Pressに会員登録されていましたら、同じID(メールアドレス)、パスワードでログインできます。</p>
+                <a href="#"><div class="logout"><img src="img/login.png" alt="login" style="width:auto;display:inline;"><span><u>ログインはこちら</u></span></div></a>
+            </div>
+            <div class="header-content2 login" style="font-size:0.8em;">
+                <p style="color:#ff2424;">※メール受信制限をされている方は tiary.co.jp からのメール受信を許可してください。</p><br>
+                <p>メール送信後、通常数分以内に確認メールが届きます。メール内のURLから登録手続きを続けてください。</p><br>
+                <p><a href="#" style="color:#00a2ff;"><u>プライバシーポリシーを読む</u></a><span style="color:#ff2424;">(必須)</span></p>
+                <p><a href="#" style="color:#00a2ff;"><u>ティアリーシンデレラパスポート利用規約を読む</u></a><span style="color:#ff2424;">(必須)</span></p>
+                <div class="orange-button" style="margin-top:16px;"><p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">仮登録メール送信</p></div>
+                <p>※メールアドレスを指定して登録する場合は <a href="#"><span style="color:#00a2ff;font-weight:bold;"><u>こちら</u></span></a></p>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved.</div>
+        </div>
+    </body>
+</html>
