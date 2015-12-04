@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <title>ティアリーアプリ</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <div class="title-bluebox">
+                <strong>お気に入り</strong>
+            </div>
+            <div class="header-content2">
+                <div class="bookmark-icon"><img src="img/star.png" alt="star"></div>
+                <img src="img/afloat.jpg" alt="banner">
+                <div class="head-desc">
+                    <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                </div>
+                <div class="head-footwrap clearfix">
+                    <div class="head-footleft">
+                        <p>有効期限
+                            <br>9月2日(水)~9/28(月)まで</p>
+                    </div>
+                    <div class="head-footright">
+                        <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                        <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                        </p>
+                    </div>
+                </div>
+                <hr style="border:1px dashed #d2d2d2;width:95%;margin:0 auto;">
+                <div class="coupon-link"><a href="#"><u>店舗詳細を見る</u></a></div>
+            </div>
+            <div class="header-content2">
+                <div class="bookmark-icon"><img src="img/star.png" alt="star"></div>
+                <img src="img/afloat.jpg" alt="banner">
+                <div class="head-desc">
+                    <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                </div>
+                <div class="head-footwrap clearfix">
+                    <div class="head-footleft">
+                        <p>有効期限
+                            <br>9月2日(水)~9/28(月)まで</p>
+                    </div>
+                    <div class="head-footright">
+                        <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                        <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                        </p>
+                    </div>
+                </div>
+                <hr style="border:1px dashed #d2d2d2;width:95%;margin:0 auto;">
+                <div class="coupon-link"><a href="#"><u>店舗詳細を見る</u></a></div>
+            </div>
+            <div class="header-content2">
+                <div class="bookmark-icon"><img src="img/star.png" alt="star"></div>
+                <img src="img/afloat.jpg" alt="banner">
+                <div class="head-desc">
+                    <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                </div>
+                <div class="head-footwrap clearfix">
+                    <div class="head-footleft">
+                        <p>有効期限
+                            <br>9月2日(水)~9/28(月)まで</p>
+                    </div>
+                    <div class="head-footright">
+                        <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                        <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                        </p>
+                    </div>
+                </div>
+                <hr style="border:1px dashed #d2d2d2;width:95%;margin:0 auto;">
+                <div class="coupon-link"><a href="#"><u>店舗詳細を見る</u></a></div>
+            </div>
+        </div>
+        <div style="padding-bottom:1px;"></div>
+    </body>
+</html>
