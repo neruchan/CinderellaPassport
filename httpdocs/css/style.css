@@ -1006,6 +1006,14 @@ ul{
     vertical-align: top;
     box-sizing: border-box;
 }
+.content-flex{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.content-flex .half-width{
+    width: 48%;
+}
 
 .content-text{
     padding-right: 12px;
@@ -1042,6 +1050,13 @@ ul{
     font-size: 14px;
     background-color: white;
 }
+.login-margin {
+    width: 96%;
+    margin: 4px auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+}
 
 .login input[type=text], .login input[type=password]{
     clear: right;
@@ -1049,6 +1064,7 @@ ul{
     height: 95%;
     resize: none;
     padding: 0.5em;
+    margin-bottom: 2px;
     font-size: 1em;
     color: #a7a7a7;
     background-color: #f6f6f6;

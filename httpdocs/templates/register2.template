@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+/*BUTTON HOVER*/
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+/*END OF BUTTON HOVER*/
+    </script>
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.template#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+
+            <div class="login login-margin">
+                <form action="#" id="member-update" name="member-update" method="post">
+                    <div class="spacing-section">
+                        <p><strong>ID（メールアドレス）</strong></p>
+                        <p>abcd@gmail.com</p>
+                    </div>
+                    <div class="spacing-section">
+                        <label for="password"><p>パスワード</p></label>
+                        <input type="password" id="password">
+                        <label for="password-confirm"><p>パスワード確認</p></label>
+                        <input type="password" id="password-confirm">
+                        <div class="content-flex">
+                            <div class="half-width">
+                                <label for="lastname"><p>姓</p></label>
+                                <input type="text" id="lastname" value=""><br>
+                            </div>
+                            <div class="half-width">
+                                <label for="firstname"><p>名</p></label>
+                                <input type="text" id="firstname" value=""><br>
+                            </div>
+                        </div>
+                        <div class="content-flex">
+                            <div class="half-width">
+                                <label for="lastkana"><p>セイ</p></label>
+                                <input type="text" id="lastkana" value=""><br>
+                            </div>
+                            <div class="half-width">
+                                <label for="firstkana"><p>メイ</p></label>
+                                <input type="text" id="firstkana" value=""><br>
+                            </div>
+                        </div>
+                        <label><p>生年月日</p></label>
+                        <table class="login-helper">
+                        <tr>
+                            <td>
+                                <select name="hinichi" id="hinichi">
+                                    <option value="" selected="selected">----</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                </select><span style="color:#5f5f5f;">年</span>
+                            </td>
+                            <td>
+                            <select name="hinichi" id="hinichi">
+                                <option value="" selected="selected">--</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select><span style="color:#5f5f5f;">月</span>
+                           </td>
+                            <td>
+                                <select name="hinichi" id="hinichi">
+                                    <option value="" selected="selected">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select><span style="color:#5f5f5f;">日</span>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div class="spacing-section">
+                        <label for="gender"><p>性別</p></label>
+                        <input type="radio" value="female" name="gender"><span style="color:#5f5f5f;">女性</span>
+                        <input type="radio" value="male" name="gender"><span style="color:#5f5f5f;">男性</span><br>
+                    </div>
+                    <div class="spacing-section">
+                        <label for="nickname"><p>ニックネーム</p></label>
+                        <input type="text" id="nickname" value=""><br>
+                    </div>
+                    <div class="spacing-section">
+                        <label for="nickname"><p>電話番号</p></label>
+                        <p>(例) 0122456789</p>
+                        <input type="text" id="phonenumber" value=""><br>
+                    </div>
+                    <div class="spacing-section">
+                        <p><input type="checkbox" name="keep-login" value=""><strong>次回から自動からログインする</strong></p>
+                        <p>※オートログインをしたまま端末を紛失した場合、拾得した人が
+端末内のデータを閲覧できてしまう恐れがあります。</p>
+                    </div>
+                    <div class="spacing-section">
+                        <p><input type="checkbox" name="mail-magazine" value=""><strong>TiARY Pressメールマガジン</strong></p>
+                        <p>※入力されたメールアドレスに会員様限定のお知らせメールをお
+送りいたします。<span><a href="#">配信メールイメージはこちら</a></span></p>
+                        <p>※配信を希望されない方はチェックをお外しください。</p>
+                    </div>
+                    <div class="spacing-section">
+                        <p><a href="#">プライバシーポリシーを読む</a><span>(必須)</span></p>
+                        <p><a href="#">ティアリーシンデレラパスポート利用規約を読む</a><span>(必須)</span></p>
+                    </div>
+                    <div class="orange-button" style="margin-top:16px;" onClick="document.getElementById('member-update').submit();">
+                        <p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">新規会員登録</p>
+                    </div>
+                </form>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved </div>
+        </div>
+    </body>
+</html>
