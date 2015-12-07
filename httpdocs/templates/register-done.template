@@ -44,10 +44,13 @@
                         <p><input type="checkbox" name="keep-login" value=""><strong>次回から自動からログインする</strong></p>
                         <p>オートログインをしたまま端末を紛失した場合、拾得した人が端
 末内のデータを閲覧できてしまう恐れがあります。</p><br />
-                        <p><span><a href="#">プライバシーポリシー・ティアリーシンデレラパスポート利用規約</a></span>をご覧ください。</p>
+                        <p><u><a href="#" style="color:#00A2FF;">プライバシーポリシー・ティアリーシンデレラパスポート利用規約</a></u>をご覧ください。</p>
                     </div>
                     <div class="orange-button" style="margin-top:16px;" onClick="document.getElementById('member-update').submit();">
                         <p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">新規会員登録</p>
+                    </div>
+                    <div class="spacing-section" style="text-align:right;">
+                        <a href="#" style="color:#00A2FF;"><u>店舗詳細を見る</u></a>
                     </div>
                 </form>
             </div>
