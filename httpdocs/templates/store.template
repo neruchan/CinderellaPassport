@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <#INCLUDE ../common/meta_common.php#>
+
+<!--CSS-->
+    <link rel="stylesheet" href="css/swiper.min.css">
+<!--/CSS-->
+
+    <title>ティアリーアプリ</title>
+
+<!--SCRIPTS-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+<!--/SCRIPTS-->
+
+<!--SWIPER SLIDER-->
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay:3000
+        });
+    });
+    </script>
+<!--END OF SWIPER SLIDER-->
+        <title></title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <#INCLUDE ../common/header.template#>
+
+<!--Swiper Slider-->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/slides/slide1.jpg" alt="slide" style="width:100%;height:auto;"></div>
+                    <div class="swiper-slide"><img src="img/slides/slide2.jpg" alt="slide" style="width:100%;height:auto;"></div>
+                    <div class="swiper-slide"><img src="img/slides/slide3.jpg" alt="slide" style="width:100%;height:auto;"></div>
+                    <div class="swiper-slide"><img src="img/slides/slide4.jpg" alt="slide" style="width:100%;height:auto;"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+<!--/Swiper Slider-->
+
+            <div class="desc-text">
+                <p>とにかくアットホームです！緊張なんか絶対しません！フレンド感覚で相談できるサロンです！絶対かわいくします！！ 。渋谷を舞台に活躍するすべての女子の本来持っている魅力をさらに引き出すスタイルを提案します。おしゃれをしたい女の子の味方です！！
+                </p>
+            </div>
+            <div class="title-bluebox">
+                <strong>サロン情報</strong>
+            </div>
+            <div class="content-wrapper">
+                <table class="store-details">
+                    <tr>
+                        <td style="width:40%;">営業時間</td>
+                        <td>月～土11:00～22:00(カット最終受付21:00)日曜11：00～20：00（カット最終受付19：00）</td>
+                    </tr>
+                    <tr>
+                        <td>定休日</td>
+                        <td>不定休</td>
+                    </tr>
+                    <tr>
+                        <td>カット価格</td>
+                        <td>7000&yen; - 15000&yen;</td>
+                    </tr>
+                    <tr>
+                        <td>住所</td>
+                        <td>東京都中央区銀座2-5-14 銀座マロニエビル10階</td>
+                    </tr>
+                    <tr>
+                        <td>アクセス</td>
+                        <td>東京メトロ表参道駅B1出口から徒歩1分</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:0px;">HP</td>
+                        <td style="border-bottom:0px;">http://www.thomg.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="title-bluebox">
+                <strong>クーポン一覧</strong>
+            </div>
+            <div class="content-wrapper" style="padding-top:1px;">
+                <div class="header-content2">
+                    <img src="img/afloat.jpg" alt="banner">
+                    <div class="head-desc">
+                        <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                    </div>
+                    <div class="head-footwrap clearfix">
+                        <div class="head-footleft">
+                            <p>有効期限
+                                <br>9月2日(水)~9/28(月)まで</p>
+                        </div>
+                        <div class="head-footright">
+                            <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                            <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-content2">
+                    <img src="img/afloat.jpg" alt="banner">
+                    <div class="head-desc">
+                        <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                    </div>
+                    <div class="head-footwrap clearfix">
+                        <div class="head-footleft">
+                            <p>有効期限
+                                <br>9月2日(水)~9/28(月)まで</p>
+                        </div>
+                        <div class="head-footright">
+                            <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                            <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-content2">
+                    <img src="img/afloat.jpg" alt="banner">
+                    <div class="head-desc">
+                        <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
+                    </div>
+                    <div class="head-footwrap clearfix">
+                        <div class="head-footleft">
+                            <p>有効期限
+                                <br>9月2日(水)~9/28(月)まで</p>
+                        </div>
+                        <div class="head-footright">
+                            <img src="img/yen-icon.png" alt="icon" style="display:inline;">
+                            <p style="display:inline;">6,300円 &#8594;<span style="color:red;font-weight:bold;"> 500円</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--おすすめ-->
+                <div class="width-wrap green-title">
+                        <div class="green-square"></div><p style="display:inline;">あなたへのおすすめクーポン</p>
+                    </div>
+                    <div class="width-wrap">
+                        <div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                    ロイン♡石原さと...</p></div><div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                    ロイン♡石原さと...</p></div><div class="osusume-content"><img class="img-tenpo" src="img/osusume.jpg" alt="tenpo"><p>10月からの月９ヒ
+                    ロイン♡石原さと...</p></div>
+                    </div>
+                    <div class="width-wrap green-title">
+                        <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                    </div>
+                    <div class="width-wrap">
+                        <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                    ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                    </div>
+                    <hr id="gray-thin">
+                    <div class="width-wrap green-title">
+                        <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                    </div>
+                    <div class="width-wrap">
+                        <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                    ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                    </div>
+                    <hr id="gray-thin">
+                    <div class="width-wrap green-title">
+                        <div class="green-square"></div><p style="display:inline;">TiARY PRESSまとめ記事</p>
+                    </div>
+                    <div class="width-wrap">
+                        <div class="img-kiji"><img src="img/osusume.jpg" alt="kiji" class="thumb-kiji"></div><div class="text-kiji"><p>10月からの月９ヒロイン♡石原さとみち
+                    ゃんの こだわり美肌ケアを見習うべし...</p><br><p>こんにちは！Tiary編集部です！もうす...</p></div>
+                    </div>
+                <!--/おすすめ--></div>
+
+        </div>
+    </body>
+</html>
