@@ -29,20 +29,23 @@
 
             <div class="login login-margin">
                 <form action="#" id="member-update" name="member-update" method="post">
-                    <div class="spacing-section">
-                        <p><strong>ID（メールアドレス）</strong></p>
-                        <p>abcd@gmail.com</p>
+                    <div class="spacing-section" style="text-align:center;">
+                        <img src="../img/thank-you.png" alt="Thank You">
+                        <p>ご登録ありがとうございます。
+店舗予約にはログインが必要です。</p>
                     </div>
                     <div class="spacing-section">
-                        <label for="password"><p>パスワード</p></label>
+                        <label for="username"><p>ID（メールアドレス）</p></label>
+                        <input type="text" id="username">
+                        <label for="password-confirm"><p>パスワード</p></label>
                         <input type="password" id="password">
-                        <label for="password-confirm"><p>パスワード確認</p></label>
-                        <input type="password" id="password-confirm">
                     </div>
                     <div class="spacing-section">
                         <p><input type="checkbox" name="keep-login" value=""><strong>次回から自動からログインする</strong></p>
-                        <p>※オートログインをしたまま端末を紛失した場合、拾得した人が
-端末内のデータを閲覧できてしまう恐れがあります。</p>
+                        <p>オートログインをしたまま端末を紛失した場合、拾得した人が端
+末内のデータを閲覧できてしまう恐れがあります。</p>
+                        <p><span><a href="#">プライバシーポリシー・ティアリーシンデレラパスポート利用規
+                                約</a></span>をご覧ください。</p>
                     </div>
                     <div class="orange-button" style="margin-top:16px;" onClick="document.getElementById('member-update').submit();">
                         <p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">新規会員登録</p>
