@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+/*BUTTON HOVER*/
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+/*END OF BUTTON HOVER*/
+    </script>
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.template#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+
+            <div class="login login-margin">
+                <form action="#" id="member-update" name="member-update" method="post">
+                    <div class="spacing-section">
+                        <p><strong>ID（メールアドレス）</strong></p>
+                        <p>abcd@gmail.com</p>
+                    </div>
+                    <div class="spacing-section">
+                        <label for="password"><p>パスワード</p></label>
+                        <input type="password" id="password">
+                        <label for="password-confirm"><p>パスワード確認</p></label>
+                        <input type="password" id="password-confirm">
+                    </div>
+                    <div class="spacing-section">
+                        <p><input type="checkbox" name="keep-login" value=""><strong>次回から自動からログインする</strong></p>
+                        <p>※オートログインをしたまま端末を紛失した場合、拾得した人が
+端末内のデータを閲覧できてしまう恐れがあります。</p>
+                    </div>
+                    <div class="orange-button" style="margin-top:16px;" onClick="document.getElementById('member-update').submit();">
+                        <p style="color:white;font-size:12px;">上記に同意して</p><p style="color:white;font-size:16px;">新規会員登録</p>
+                    </div>
+                </form>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved </div>
+        </div>
+    </body>
+</html>

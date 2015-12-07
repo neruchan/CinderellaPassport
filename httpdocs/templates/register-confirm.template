@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+/*BUTTON HOVER*/
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+            $('.blue-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#e0eefa,#f3faff)"});
+            });
+            $('.blue-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+/*END OF BUTTON HOVER*/
+    </script>
+    <title>ティアリーアプリ</title>
+</head>
+
+    <body>
+        <div class="wrapper">
+<!--***HEADER***-->
+        <#INCLUDE ../common/header.template#>
+<!--/***HEADER***-->
+            <div style="height:3em;"></div>
+
+            <div class="content-wrapper login-margin">
+                <table class="store-details">
+                    <tr>
+                        <td>ID（メールアドレス）</td>
+                        <td><#PRINT email#></td>
+                    </tr>
+                    <tr>
+                        <td>パスワード</td>
+                        <td><#PRINT password#></td>
+                    </tr>
+                    <tr>
+                        <td>お名前</td>
+                        <td><#PRINT telephone#></td>
+                    </tr>
+                    <tr>
+                        <td>フリガナ</td>
+                        <td><#PRINT name02#></td>
+                    </tr>
+                    <tr>
+                        <td>生年月日</td>
+                        <td><#PRINT birthday#></td>
+                    </tr>
+                    <tr>
+                        <td>性別</td>
+                        <td><#PRINT gender#></td>
+                    </tr>
+                    <tr>
+                        <td>ニックネーム</td>
+                        <td><#PRINT nickname#></td>
+                    </tr>
+                    <tr>
+                        <td>電話番号</td>
+                        <td><#PRINT telephone#></td>
+                    </tr>
+                </table>
+                <div style="margin:20px auto;"></div>
+                        <a href="#check_form" onClick="send('fmail_check.php')"><div class="orange-button">上記の内容で送信する</div></a>
+                        <a href="book-form.php"><div class="blue-button"><img src="img/arrow-back.png" alt="modoru">戻る</div></a>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved </div>
+        </div>
+    </body>
+</html>
