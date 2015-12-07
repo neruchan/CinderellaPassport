@@ -230,11 +230,15 @@
 
             <div class="comment-popup">
                 <div class="comment-modal">
-                    <p>コメント送信しました！</p>
-                    <p>シェアしませんか？</p>
-                    <a href="#"><img src="../img/facebook-icon.png" alt="facebook"></a>
-                    <a href="#"><img src="../img/twitter-icon.png" alt="twitter"></a>
-                    <div class="modal-close" id="comment_btn"><p>戻る</p></div>
+                    <div style="position:relative;">
+                        <p>コメント送信しました！</p>
+                        <p>シェアしませんか？</p>
+                        <div class="share-images">
+                            <a href="#"><img src="../img/facebook-icon.png" alt="facebook"></a>
+                            <a href="#"><img src="../img/twitter-icon.png" alt="twitter"></a>
+                        </div>
+                        <div class="modal-close" id="comment_btn"><p>X</p></div>
+                    </div>
                 </div>
             </div>
 

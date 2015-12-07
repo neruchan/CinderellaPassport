@@ -608,23 +608,33 @@ ul{
     opacity: 0;
 }
 .comment-modal img{
-    width: 30%;
+    width: 70%;
 }
 .comment-modal > p:nth-child(2) {
     margin-bottom: 7px;
     box-sizing: border-box;
 }
 .modal-close {
+    position: absolute;
+    right: -30px;
+    top: -30px;
     background-color: #84BAE4;
-    border-radius: 3px;
-    width: 61%;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 42px;
     margin: 0 auto;
     padding: 4px;
     box-sizing: border-box;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);
 }
 .modal-close > p {
     color: white;
     font-size: 20px;
+}
+.share-images{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 #gray-line {
