@@ -44,6 +44,9 @@
         <div class="title-bluebox" style="text-align:left;">
             <strong>マイメニュー</strong>
         </div>
+        <div class="my-menu-wrapper" style="padding-top:10px;">
+            <div class="menu-announce"><p style="color:#72b3d8;">有効期限 2016.4.21</p></div>
+        </div>
         <div class="my-menu-wrapper clearfix">
             <a href="favorites.php"><div class="menu-item"><img src="img/mypage-icon2.png" alt="icon"><p style="color:#72b3d8;">お気に入り</p></div></a>
             <a href="history.php"><div class="menu-item"><img src="img/mypage-icon3.png" alt="icon"><p style="color:#72b3d8;">クーポン履歴</p></div></a>
