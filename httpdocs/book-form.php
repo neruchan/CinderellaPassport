@@ -137,6 +137,8 @@ if($_POST['book_flag']){
         $isValid = false;
         $PAGE_VALUE['err_bookdate3'] = "来店日時を第3希望まで選択して、全部の項目を入力してください。";
     }
+    
+    
         
     if($isValid){
         require_once "book-confirm.php";

@@ -28,15 +28,16 @@ $ins_ipfTemplate = new ipfTemplate();
 $ins_ipfDB = new ipfDB;
 $ins_ipfDB->ini("cinderella");
 
-// require_once "define.php";
+require_once "define.php";
 /***********************
  * 画面表示処理
 ***********************/
 //自動ログイン
 
 
-// require_once "common/user_main.php";
-
+// require_once "common/user_main.php";if($_POST['form_send']){
+    
+}
 
 $couponData = $cinderella->selectCouponByID($_POST['coupon_id']);
 
@@ -94,14 +95,140 @@ if(count($couponData)>0){
     }    
 }
 
-
-
 $PAGE_VALUE['first_kibou'] = date_japan($_POST['month_1'], $_POST['day_1']);
 $PAGE_VALUE['first_time'] = $_POST['hour_1'].":".$_POST['minute_1'];
 $PAGE_VALUE['second_kibou'] = date_japan($_POST['month_2'], $_POST['day_2']);
 $PAGE_VALUE['second_time'] = $_POST['hour_2'].":".$_POST['minute_2'];
 $PAGE_VALUE['third_kibou'] = date_japan($_POST['month_3'], $_POST['day_3']);
 $PAGE_VALUE['third_time'] = $_POST['hour_3'].":".$_POST['minute_3'];
+
+if($_POST['form_send']){
+    
+    $firstKibou = $_POST['first_kibou'];
+    $firstTime = $_POST['first_time'];
+    
+    $secondKibou = $_POST['second_kibou'];
+    $secondTime = $_POST['second_time'];
+    
+    $thirdKibou = $_POST['third_kibou'];
+    $thirdTime = $_POST['third_time'];
+    
+    $name01 = $PAGE_VALUE['name01'];
+    $name02 = $PAGE_VALUE['name02'];
+    
+    $email = $PAGE_VALUE['email'];
+    
+    $telephone = $PAGE_VALUE['telephone'];
+    
+    $shop_email = $PAGE_VALUE['shop_email'];
+    
+    mb_language("ja");
+	mb_internal_encoding("UTF-8");
+    
+    $txt ='
+────────────────────────────────────
+■第1希望日時
+'.$firstKibou.'
+'.$firstTime.'
+
+■第2希望日時
+'.$secondKibou.'
+'.$secondTime.'
+
+■第3希望日時
+'.$thirdKibou.'
+'.$thirdTime.'
+
+■メールアドレス
+'.$email.'
+
+■お名前
+'.$name01.'
+
+■フリガナ
+'.$name02.'
+
+■電話番号
+'.$telephone.'
+
+■メールアドレス
+'.$email.'
+────────────────────────────────────
+';
+    
+    $to = $shop_email;
+	//メールタイトル
+	$subject = $subjectForAdmin;
+	// 	$subject = mb_convert_encoding($subject, "ISO-2022-JP","utf-8");
+	// 	$subject = mb_encode_mimeheader($subject,"ISO-2022-JP");
+	$subject = mb_convert_encoding($subject, "JIS", 'utf-8');
+	$subject = base64_encode($subject);
+	$subject = '=?ISO-2022-JP?B?' . $subject . '?=';
+	$fromname = mb_convert_encoding($fromDisplay, "ISO-2022-JP","utf-8");
+	$fromname = mb_encode_mimeheader($fromname,"ISO-2022-JP");
+	$headers = 'From:<'.$_POST["mail"].'>' . "\r\n" ;
+	$headers .= "X-Mailer: PHP/".phpversion()."\n";
+	$headers .= "MIME-version: 1.0\n";
+	$headers .= "Return-Path: ".$adminEmail."\n";
+	$headers .= "Content-Type: text/plain; charset=ISO-2022-JP\n";
+	$headers .= "Content-Transfer-Encoding: 7bit\n";
+	
+	$txt = mb_convert_encoding($txt, "ISO-2022-JP","utf-8");
+	mail($to,$subject,$txt,$headers);
+
+	//送信メールアドレス
+	$to1= $email;
+	//メールタイトル
+	$subject1 = $subjectForCust;
+	$subject1 = mb_convert_encoding($subject1, "JIS", 'utf-8');
+	$subject1 = base64_encode($subject1);
+	$subject1 = '=?ISO-2022-JP?B?' . $subject1 . '?=';
+// 	$subject1 = mb_convert_encoding($subject1, "ISO-2022-JP","utf-8");
+// 	$subject1 = mb_encode_mimeheader($subject1,"ISO-2022-JP");
+	//メール内容
+	$txt1 = $custHeader.'
+────────────────────────────────────
+■第1希望日時
+'.$firstKibou.'
+'.$firstTime.'
+
+■第2希望日時
+'.$secondKibou.'
+'.$secondTime.'
+
+■第3希望日時
+'.$thirdKibou.'
+'.$thirdTime.'
+
+■メールアドレス
+'.$email.'
+
+■お名前
+'.$name01.'
+
+■フリガナ
+'.$name02.'
+
+■電話番号
+'.$telephone.'
+
+■メールアドレス
+'.$email.'
+
+'.$custFooter;
+	$headers1='From:"'.$fromname.'"<'.$adminEmail.'>' . "\r\n" ;
+	
+	$headers1 .= "X-Mailer: PHP/".phpversion()."\n";
+	$headers1 .= "MIME-version: 1.0\n";
+	$headers1 .= "Return-Path: ".$adminEmail."\n";
+	$headers1 .= "Content-Type: text/html; charset=ISO-2022-JP\n";
+	$headers1 .= "Content-Transfer-Encoding: 7bit\n";
+	
+	$txt1 = mb_convert_encoding($txt1, "ISO-2022-JP","utf-8");
+	mail($to1,$subject1,nl2br($txt1),$headers1);
+    
+    header('Location: book-done.php');
+}
 
 function date_japan($month, $date) {
     $year = date("Y");

@@ -37,7 +37,7 @@
 </head>
 
     <body>
-    <form method="post" action="">
+    <form method="post" action="" id="myForm" name="myForm">
     
         <div class="wrapper">
 <!--***HEADER***-->
@@ -89,6 +89,16 @@
                         <td><#PRINT third_time#></td>
                     </tr>
                 </table>
+                
+                <input type="hidden" name="first_kibou" value="<#PRINT first_kibou#>" />
+                <input type="hidden" name="first_time" value="<#PRINT first_time#>" />
+                
+                <input type="hidden" name="second_kibou" value="<#PRINT second_kibou#>" />
+                <input type="hidden" name="second_time" value="<#PRINT second_time#>" />
+                
+                <input type="hidden" name="third_kibou" value="<#PRINT third_kibou#>" />
+                <input type="hidden" name="third_time" value="<#PRINT third_time#>" />
+                
             </div>
             <div class="form-lightbox">
                 ユーザー情報確認
@@ -113,11 +123,12 @@
                     </tr>
                 </table>
                 <div style="margin:20px auto;"></div>
-                        <a href="#check_form" onClick="send('fmail_check.php')"><div class="orange-button">上記の内容で送信する</div></a>
+                        <a href="#check_form" onClick="send('book-confirm.php')"><div class="orange-button">上記の内容で送信する</div></a>
                         <a href="book-form.php"><div class="blue-button"><img src="img/arrow-back.png" alt="modoru">戻る</div></a>
                         </div>
                         <div style="height:50px;"></div>
             </div>
+            <input type="hidden" name="form_send" value="form_send" />
             </form>
     </body>
 </html>
