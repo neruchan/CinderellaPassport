@@ -37,7 +37,7 @@ require_once "define.php";
 
 // require_once "common/user_main.php";if($_POST['form_send']){
     
-}
+
 
 $couponData = $cinderella->selectCouponByID($_POST['coupon_id']);
 
