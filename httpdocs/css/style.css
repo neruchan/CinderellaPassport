@@ -191,6 +191,10 @@ ul{
     position: relative;
 }
 
+.announce-head{
+    background-color: #E1F2FF;
+}
+
 .bookmark-icon{
     position: absolute;
     top: 3px;

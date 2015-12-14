@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <title>ティアリーアプリ</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <#INCLUDE ../common/header.template#>
+            <div style="height:3em;"></div>
+            <div class="title-bluebox">
+                <strong>クーポン履歴</strong>
+            </div>
+            <div class="content-wrapper login-margin">
+                <div class="head-desc announce-head">
+                    <h1><strong>iOS9リリースは今秋！やはりiPhone6sもしくはiPhone7の発売日は9月濃厚！</strong></h1>
+                </div>
+                <div>
+                    <p>6月8日、Appleの開発者会議「WWDC2015」が開催されました。このイベントでiOS9が正式に発表されリリースは今秋と告知されました。
+去年もiOS8がこのイベントで発表され、その時も秋にリリースと告知され「iPhone6」が9月に発売されたので今年の新型と予想される「iPhone6s」もしくは「iPhone7」も9月頃に発売日が設定されているとみていいと思います。
+以下は過去3年のiOSリリース時期と新しいiPhoneの予約開始〜発売日の予想できる日程です。</p>
+                </div>
+            </div>
+            <div class="content-wrapper login-margin">
+                <div class="head-desc">
+                    <h1><strong>iOS9リリースは今秋！やはりiPhone6sもしくはiPhone7の発売日は9月濃厚！</strong></h1>
+                </div>
+                <div>
+                    <p>6月8日、Appleの開発者会議「WWDC2015」が開催されました。このイベントでiOS9が正式に発表されリリースは今秋と告知されました。
+去年もiOS8がこのイベントで発表され、その時も秋にリリースと告知され「iPhone6」が9月に発売されたので今年の新型と予想される「iPhone6s」もしくは「iPhone7」も9月頃に発売日が設定されているとみていいと思います。
+以下は過去3年のiOSリリース時期と新しいiPhoneの予約開始〜発売日の予想できる日程です。</p>
+                </div>
+            </div>
+            <div class="content-wrapper login-margin">
+                <div class="head-desc">
+                    <h1><strong>iOS9リリースは今秋！やはりiPhone6sもしくはiPhone7の発売日は9月濃厚！</strong></h1>
+                </div>
+                <div>
+                    <p>6月8日、Appleの開発者会議「WWDC2015」が開催されました。このイベントでiOS9が正式に発表されリリースは今秋と告知されました。
+去年もiOS8がこのイベントで発表され、その時も秋にリリースと告知され「iPhone6」が9月に発売されたので今年の新型と予想される「iPhone6s」もしくは「iPhone7」も9月頃に発売日が設定されているとみていいと思います。
+以下は過去3年のiOSリリース時期と新しいiPhoneの予約開始〜発売日の予想できる日程です。</p>
+                </div>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved.</div>
+        </div>
+    </body>
+</html>
