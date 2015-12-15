@@ -197,6 +197,10 @@ ul{
     color: #6BAADB;
     font-size: 14px;
 }
+.announce-content{
+    padding: 10px;
+    font-size: 14px;
+}
 
 .bookmark-icon{
     position: absolute;
@@ -1059,7 +1063,7 @@ ul{
 }
 .login-margin {
     width: 96%;
-    margin: 4px auto;
+    margin: 4px auto 10px auto;
     box-sizing: border-box;
     border-radius: 4px;
     border: 2px solid #d2d2d2;
