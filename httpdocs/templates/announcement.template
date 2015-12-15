@@ -8,9 +8,6 @@
         <div class="wrapper">
             <#INCLUDE ../common/header.template#>
             <div style="height:3em;"></div>
-            <div class="title-bluebox">
-                <strong>クーポン履歴</strong>
-            </div>
             <div class="content-wrapper login-margin">
                 <div class="head-desc announce-head">
                     <h1><strong>iOS9リリースは今秋！やはりiPhone6sもしくはiPhone7の発売日は9月濃厚！</strong></h1>
