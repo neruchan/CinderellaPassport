@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#INCLUDE ../common/meta_common.php#>
+    <title>ティアリーアプリ</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <#INCLUDE ../common/header.template#>
+            <div style="height:3em;"></div>
+            <div class="content-wrapper login-margin">
+                <div class="announce-content">
+                    <p style="margin-bottom:4px;"><strong>利用規約</strong></p>
+                    <p>第1章     総則</p>
+                    <p><strong>1.当社のサービスのご利用</strong></p>
+                    <p>本利用規約にご同意いただくことによって、当社のサービスをご利用いただくことができます。<br />
+なお、無料で提供しているサービスにつきましては、本利用規約にご同意いただく手続に代えて、実際にご利用いただくことで本利用規約にご同意いただいたものとみなします。</p>
+                    <p><strong>2.サービス内容の保証および変更</strong></p>
+
+                    <p>当社は提供するサービスの内容について、瑕疵（かし）やバグがないことは保証しておりません。<br />
+また当社は、お客様にあらかじめ通知することなくサービスの内容や仕様を変更したり、提供を停止したり中止したりすることができるものとします。</p>
+                </div>
+            </div>
+            <div class="copyright">Copyright &copy; TiARY CINDERELLA PASSPORT. All rights reserved.</div>
+        </div>
+    </body>
+</html>
