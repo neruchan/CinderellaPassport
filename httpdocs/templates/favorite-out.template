@@ -2,6 +2,20 @@
 <html>
 <head>
     <#INCLUDE ../common/meta_common.php#>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+/*BUTTON HOVER*/
+            $('.orange-button').on('touchstart',function(){
+                $(this).css({"background":"linear-gradient(#bca16b,#e3d2a8)"});
+            });
+            $('.orange-button').on('touchend',function(){
+                $(this).removeAttr('style');
+            });
+        });
+/*END OF BUTTON HOVER*/
+    </script>
     <title>ティアリーアプリ</title>
 </head>
     <body style="background-color:#ebebeb;">
@@ -15,9 +29,7 @@
                     </div>
                     <div class="header-content2">
                         <div class="bookmark-icon"><img src="img/star-unselected.png" alt="star"></div>
-                        <div class="bookmark-highlight">
-                            
-                        </div>
+                        <div class="bookmark-highlight"></div>
                         <img src="img/afloat.jpg" alt="banner">
                         <div class="head-desc">
                             <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>

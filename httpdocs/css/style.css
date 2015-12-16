@@ -198,6 +198,7 @@ ul{
     font-size: 14px;
 }
 .announce-content{
+    overflow: hidden;
     padding: 10px;
     font-size: 14px;
 }
@@ -242,9 +243,29 @@ div.announce-content>div>h1{
     width: 36px;
     height: 36px;
     z-index: 11;
+    opacity: 0;
     border-radius: 20px;
     border: 2px solid #EE6A91;
-    transform: scale(2);
+    transform: scale(20);
+    animation: book-highlight 0.4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes book-highlight{
+    0%{
+        opacity:0;
+        transform:scale(20);
+    }
+    75%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(2);
+    }
 }
 
 .header-content2 img{
@@ -460,6 +481,8 @@ div.announce-content>div>h1{
     -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+    -webkit-user-select:none;
+    user-select:none;
 }
 
 .footer{
