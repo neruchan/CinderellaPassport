@@ -80,8 +80,8 @@
                                 <p><strong>ログインが必要です</strong></p>
                                 <p>クーポンのお気に入り機能を使うには会員登録及びログインが必要です。</p>
                                 <div class="favorite-buttons">
-                                    <p><a href="#">新規会員登録</a></p>
-                                    <p><a href="#">ログイン</a></p>
+                                    <p><a href="http://cinderella.tiary.jp/register.php">新規会員登録</a></p>
+                                    <p><a href="http://cinderella.tiary.jp/login.php">ログイン</a></p>
                                 </div>
                             </div>
                             <div class="modal-close" id="comment_btn"><p>X</p></div>
