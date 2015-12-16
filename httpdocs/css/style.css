@@ -204,6 +204,13 @@ ul{
 div.announce-content>p{
     margin-bottom: 6px;
 }
+div.announce-title{
+    text-align: center;
+}
+div.announce-content>div>h1{
+    color: #6D6D6D;
+    font-size: 16px;
+}
 
 .bookmark-icon{
     position: absolute;
@@ -227,6 +234,17 @@ div.announce-content>p{
 .bookmark-icon-home img {
     width: 100%;
     height: auto;
+}
+
+.bookmark-highlight {
+    position: absolute;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    z-index: 11;
+    border-radius: 20px;
+    border: 2px solid #EE6A91;
+    transform: scale(2);
 }
 
 .header-content2 img{

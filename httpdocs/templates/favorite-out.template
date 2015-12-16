@@ -4,14 +4,20 @@
     <#INCLUDE ../common/meta_common.php#>
     <title>ティアリーアプリ</title>
 </head>
-    <body>
+    <body style="background-color:#ebebeb;">
         <div class="wrapper">
             <#INCLUDE ../common/header.template#>
             <div style="height:3em;"></div>
             <div class="content-wrapper login-margin">
                 <div class="announce-content">
+                    <div class="announce-title">
+                        <h1>気になるクーポンを<br />お気に入りに追加しよう!</h1>
+                    </div>
                     <div class="header-content2">
-                        <div class="bookmark-icon"><img src="img/star.png" alt="star"></div>
+                        <div class="bookmark-icon"><img src="img/star-unselected.png" alt="star"></div>
+                        <div class="bookmark-highlight">
+                            
+                        </div>
                         <img src="img/afloat.jpg" alt="banner">
                         <div class="head-desc">
                             <h1><strong>【AFLOATで可愛くなる★特別プラン】カット</strong></h1>
@@ -27,8 +33,6 @@
                                 </p>
                             </div>
                         </div>
-                        <hr style="border:1px dashed #d2d2d2;width:95%;margin:0 auto;">
-                        <div class="coupon-link"><a href="#"><u>店舗詳細を見る</u></a></div>
                     </div>
                 </div>
                 <div class="orange-button">お気に入り機能を使ってみる</div>
