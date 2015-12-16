@@ -213,6 +213,21 @@ div.announce-content>div>h1{
     font-size: 16px;
 }
 
+.favorite-pop>p{
+    font-size: 12px;
+}
+.favorite-buttons{
+    margin: 10px auto;
+}
+div.favorite-buttons>p{
+    margin-bottom: 8px;
+    color: #84bae4;
+    font-size: 16px;
+}
+div.favorite-buttons>p:last-child{
+    margin-bottom: 0;
+}
+
 .bookmark-icon{
     position: absolute;
     top: 3px;
