@@ -1,0 +1,7 @@
+<table border="1">
+	<tr>
+		<td><#PRINT hoge#></td>
+		<td><#PRINT hoge2#></td>
+	</tr>
+</table>
+<#INCLUDE hoge0.template#><br>

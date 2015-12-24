@@ -45,11 +45,11 @@ function clickChoose(vals,name) {
 <#LOOP_START dataAll#>
 <tr>
 <td class="tbl"><#LOOP_PRINT id#></td>
-<td class="tbl"><#LOOP_PRINT name#></td>
-<td class="tbl"><#LOOP_PRINT pref#></td>
-<td class="tbl"><#LOOP_PRINT address#></td>
-<td class="tbl"><#LOOP_PRINT email#></td>
-<td class="tbl" align="center"><div onclick="javascript:clickChoose(<#LOOP_PRINT id#>,'<#LOOP_PRINT name#>')">選択</div></td>
+<td class="tbl"><#LOOP_PRINT shop_name#></td>
+<td class="tbl"><#LOOP_PRINT shop_pref#></td>
+<td class="tbl"><#LOOP_PRINT shop_address#></td>
+<td class="tbl"><#LOOP_PRINT shop_email#></td>
+<td class="tbl" align="center"><div onclick="javascript:clickChoose(<#LOOP_PRINT id#>,'<#LOOP_PRINT shop_name#>')">選択</div></td>
 </tr>
 <#LOOP_END dataAll#>
 

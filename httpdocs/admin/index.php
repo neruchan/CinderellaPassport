@@ -40,7 +40,7 @@ if($_REQUEST["login_flag"]!=""){
 
 	if($_REQUEST["userid"] && $_REQUEST["pass"]){
 // 		var_dump($_POST);
-		$passValidation = ($_REQUEST["userid"] == "admin" && $_REQUEST["pass"] == "admin");
+		$passValidation = ($_REQUEST["userid"] == "cin-admin" && $_REQUEST["pass"] == "1nJYOdLRSa");
 		if($passValidation>0){
 			$_SESSION["admin"] = $_REQUEST["userid"];
 			header('Location: main.php');

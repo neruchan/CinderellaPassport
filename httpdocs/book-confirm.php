@@ -16,9 +16,9 @@ require_once "cinderella/ipfDB.php";
  * セッション格納処理
 ***********************/
 
-// require_once "akb/startingClass.php";
-// $ins_startingClass = new startingClass;
-// $sysinfo = $ins_startingClass->getStartingData(9);	//9はログインチェックしない
+ require_once "cinderella/user_class/startingClass.php";
+ $ins_startingClass = new startingClass;
+ $sysinfo = $ins_startingClass->getStartingData(9);	//9はログインチェックしない
 
 
 /***********************
@@ -40,6 +40,8 @@ require_once "define.php";
 
 
 $couponData = $cinderella->selectCouponByID($_POST['coupon_id']);
+
+$PAGE_VALUE['coupon_id'] = $_POST['coupon_id'];
 
 if(count($couponData)>0){
     
@@ -166,7 +168,7 @@ if($_POST['form_send']){
 	$subject = '=?ISO-2022-JP?B?' . $subject . '?=';
 	$fromname = mb_convert_encoding($fromDisplay, "ISO-2022-JP","utf-8");
 	$fromname = mb_encode_mimeheader($fromname,"ISO-2022-JP");
-	$headers = 'From:<'.$_POST["mail"].'>' . "\r\n" ;
+	$headers = 'From:<'.$email.'>' . "\r\n" ;
 	$headers .= "X-Mailer: PHP/".phpversion()."\n";
 	$headers .= "MIME-version: 1.0\n";
 	$headers .= "Return-Path: ".$adminEmail."\n";

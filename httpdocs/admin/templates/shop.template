@@ -13,7 +13,10 @@
 			$("#search_flag1").val("del");
 			$("#delForm").submit();
 		});
-	
+	    
+        $("#search_btn").click(function(){
+			$("#sForm").submit();
+		});
 		
 		$("#search_pref").change(function(){
 			$("#delForm").submit();
@@ -43,7 +46,14 @@
 <div class="clearfix"></div>
 
 <!--table of content start-->
-<div id="title02">店舗管理画面</div></br>
+<div id="title02">店舗管理画面</div></br></br>
+
+<div id="search" align="center">
+<form action="" name="sForm" id="sForm" method="post">
+ID検索 <input type="text" size="40" name="search_shopid" id="search_shopid" value="<#PRINT search_shopid#>"/> &nbsp;店舗名検索 <input type="text" size="40" name="search_shopname" id="search_shopname" value="<#PRINT search_shopname#>" /> &nbsp;<a href="javascript:void(0)" id="search_btn"><input type="button" value="検索" /></a>
+<input type="hidden"name="search_flag" id="search_flag" value="search_flag"/>
+</form>
+</div>
 
 <div class="number">
 <br/>
@@ -59,12 +69,17 @@
 <td width="100" class="title-tbl">
 <select name="search_pref" id="search_pref">
 <option value="0">都道府県</option>
-<#PRINT article_pref_pulldown#>
+<#PRINT shop_pref_pulldown#>
 </select>
 </td>
 <td width="100" class="title-tbl">
 <select name="search_a_addtime" id="search_a_addtime">
-<#PRINT article_addtime_pulldown#>
+<#PRINT shop_addtime_pulldown#>
+</select>
+</td>
+<td width="100" class="title-tbl">
+<select name="shop_coupon_yn" id="shop_coupon_yn">
+<#PRINT shop_coupon_yn_pulldown#>
 </select>
 </td>
 <td width="50" class="title-tbl">削除</td>

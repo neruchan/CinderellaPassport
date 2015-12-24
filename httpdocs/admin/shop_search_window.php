@@ -10,13 +10,13 @@
  * 定義
 ***********************/
 require_once "cinderella/ipfTemplate.php";
-require_once "cinderella/ipfDB.php";
+require_once "tiary/ipfDB.php";
 /***********************
  * コンストラクタ
 ***********************/
 $ins_ipfTemplate = new ipfTemplate();
 $ins_ipfDB = new ipfDB;
-$ins_ipfDB->ini("cinderella_admin");
+$ins_ipfDB->ini("admin");
 /***********************
  * 画面表示処理
  ***********************/
@@ -30,7 +30,7 @@ $PAGE_VALUE["tag_2"] = "-->";
 if($_POST['submit']){
     $PAGE_VALUE["tag_1"] = "";
     $PAGE_VALUE["tag_2"] = "";
-    $valuesForLoop['dataAll'] = $cinderella_admin->searchShop($_POST['keyword']);
+    $valuesForLoop['dataAll'] = $admin->selectShopAll("",$_POST['keyword'],"","","","",1000,0);
 }
 
 
