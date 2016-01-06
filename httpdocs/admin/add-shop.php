@@ -30,6 +30,8 @@ if(!$_SESSION["admin"]){
 	header('Location: index.php');
 }
 
+$PAGE_VALUE["category_checkbox"] = setCheckboxArticle($coupon_categorys,($_POST["category"]!=""?implode(",", $_POST["category"]):$_POST["category"]));
+
 $PAGE_VALUE["shop_name"] = $_POST["shop_name"];
 $PAGE_VALUE["shop_name_kana"] = $_POST["shop_name_kana"];
 $PAGE_VALUE["shop_notes"] = $_POST["shop_notes"];
@@ -50,9 +52,13 @@ $PAGE_VALUE["shop_eki"] = $_POST["shop_eki"];
 $PAGE_VALUE["shop_average_price"] = $_POST["shop_average_price"];
 $PAGE_VALUE["shop_email"] = $_POST["shop_email"];
 
+$PAGE_VALUE["shop_aff_tag"] = $_POST["shop_aff_tag"];
+
 $PAGE_VALUE["up_img"] = "";
 
-
+$PAGE_VALUE["up_img1"] = "";
+$PAGE_VALUE["up_img2"] = "";
+$PAGE_VALUE["up_img3"] = "";
 $PAGE_VALUE['shop_name_err'] = "";
 $PAGE_VALUE['shop_name_kana_err'] = "";
 $PAGE_VALUE['shop_email_err'] = "";
@@ -91,10 +97,11 @@ if($_POST["add_flag"]!=""){
             $_POST["up_img1"] = $domainUrl."".$filename;
         }
         
-	}else{
-		$PAGE_VALUE[article_img1_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
-		$error_flag = 1;
 	}
+//    else{
+//		$PAGE_VALUE[article_img1_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
+//		$error_flag = 1;
+//	}
     
     if($_FILES['article_img2']['tmp_name'] != ''){
         $allowedTypes = array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
@@ -116,10 +123,11 @@ if($_POST["add_flag"]!=""){
             $_POST["up_img2"] = $domainUrl."".$filename;
         }
         
-	}else{
-		$PAGE_VALUE[article_img2_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
-		$error_flag = 1;
 	}
+//    else{
+//		$PAGE_VALUE[article_img2_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
+//		$error_flag = 1;
+//	}
     
     if($_FILES['article_img3']['tmp_name'] != ''){
         $allowedTypes = array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
@@ -141,10 +149,11 @@ if($_POST["add_flag"]!=""){
             $_POST["up_img3"] = $domainUrl."".$filename;
         }
         
-	}else{
-		$PAGE_VALUE[article_img3_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
-		$error_flag = 1;
 	}
+//    else{
+//		$PAGE_VALUE[article_img3_err] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
+//		$error_flag = 1;
+//	}
 	
 	if($_POST["shop_name"] ==""){
 		$PAGE_VALUE['shop_name_err'] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
@@ -164,11 +173,12 @@ if($_POST["add_flag"]!=""){
 		$error_flag = 1;
 	}
     
-    if($_POST["shop_email"] ==""){
-		$PAGE_VALUE['shop_email_err'] ='<br><p class="red">※「メールアドレス」は必須項目です、入力して下さい。</p>';
-		$error_flag = 1;
-	}else{
-
+//    if($_POST["shop_email"] ==""){
+//		$PAGE_VALUE['shop_email_err'] ='<br><p class="red">※「メールアドレス」は必須項目です、入力して下さい。</p>';
+//		$error_flag = 1;
+//	}else{
+    if($_POST["shop_email"])
+    {
         if(!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $_POST["shop_email"])){
             $PAGE_VALUE['shop_email_err'] ='<br><p class="red">※ 「メールアドレス」に正しく入力してください。</p>';
             $error_flag = 1;
@@ -180,6 +190,7 @@ if($_POST["add_flag"]!=""){
 	    mb_regex_encoding('UTF-8');
         mb_internal_encoding("UTF-8"); 
 		$_DATA = array();
+        $_DATA['shoptbl']['shop_category'] = implode(',', $_POST['category']);
 		$_DATA['shoptbl']['shop_name'] = $_POST['shop_name'];
         $_DATA['shoptbl']['shop_name_kana'] = $_POST['shop_name_kana'];
 		$_DATA['shoptbl']['shop_notes'] = $_POST["shop_notes"];
@@ -199,6 +210,8 @@ if($_POST["add_flag"]!=""){
         $_DATA['shoptbl']['shop_img'] = $_POST["up_img1"];
         $_DATA['shoptbl']['shop_img2'] = $_POST["up_img2"];
         $_DATA['shoptbl']['shop_img3'] = $_POST["up_img3"];
+        
+        $_DATA['shoptbl']['shop_aff_tag'] = $_POST["shop_aff_tag"];
 		
 		$_DATA['shoptbl']['shop_addtime'] = date('Y-m-d H:i:s');
         $_DATA['shoptbl']['shop_updatetime'] = date('Y-m-d H:i:s');

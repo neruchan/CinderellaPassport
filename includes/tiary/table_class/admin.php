@@ -779,6 +779,15 @@ class admin extends ipfDB{
         if($couponyn!=""){
             //$cuposql = " AND shop_pref = '$pref'";
         }
+        
+        $keywordsql = "";
+		if($id!=""){
+			$keywordsql .= " AND id = '$id' ";
+		}
+
+		if($name!=""){
+			$keywordsql .= " AND shop_name LIKE '%$name%' ";
+		}
 
 
 		$sql = "SELECT
@@ -787,6 +796,7 @@ class admin extends ipfDB{
 					shoptbl
 				WHERE
 					shop_delete_flag = 0
+                $keywordsql
 				$prefsql
                 $cuposql
 						";
@@ -808,7 +818,13 @@ class admin extends ipfDB{
         
 		$order = " ORDER BY s.shop_addtime DESC ";
 		if($addtime!=""){
-			$order = " ORDER BY s.shop_addtime ASC ";
+            if($addtime==1){
+                $order = " ORDER BY s.shop_addtime DESC ";
+            }
+            else if($addtime==2){
+                $order = " ORDER BY s.shop_addtime ASC ";
+            }
+			
 		}
         
         $prefsql = "";
@@ -852,11 +868,12 @@ class admin extends ipfDB{
 					shoptbl s
 				WHERE
 					s.shop_delete_flag = 0
+                    $keywordsql
 					$prefsql
                     $cuposql
 					$order
 					LIMIT $num OFFSET ".($page * $num)." ";
-// 			print $sql;
+ 			//print $sql;
 		$data = $this->query($sql);
 		return $data;
 	}
@@ -901,7 +918,7 @@ class admin extends ipfDB{
 			$sqlstr .=" $or id= $val ";
 		}
 		$sqlstr .= ") ";
-		$sql = "UPDATE shoptbl SET shop_delete_flag = 1 WHERE $sqlstr ";
+		$sql = "UPDATE shoptbl SET shop_delete_flag = 1, shop_updatetime = '".date('Y-m-d H:i:s')."' WHERE $sqlstr ";
 		// 				print $sql;
 		$data = $this->query($sql,1);
 		return $data;
@@ -913,21 +930,7 @@ class admin extends ipfDB{
 		if(!$id)
 		return array();
 		$sql = "SELECT
-						s.shop_category,
-						s.id,
-						s.shop_name,
-						s.shop_pref,
-						s.shop_address,
-						s.shop_phone,
-						s.shop_homepage,
-						s.shop_addtime,
-						s.shop_updatetime,
-						s.shop_access,
-						s.shop_holiday,
-						s.shop_opentime,
-						s.shop_pay,
-						ads.account,
-						ads.passwords
+						s.*
 					FROM
 						shoptbl s LEFT JOIN admin_shop ads ON ads.shop_id = s.id
 					WHERE

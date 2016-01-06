@@ -45,6 +45,14 @@ function openWindow() {
 </tr>
 
 <tr>
+<td class="title-tbl02">カテゴリ <span class="red">※</span></td>
+<td>
+<#PRINT category_checkbox#>
+</td>
+</tr>
+<#PRINT category_err#>
+
+<tr>
 <td class="title-tbl02">店舗名(カナ)<span class="red">※</span></td>
 <td><input type="text" style="width:600px;" name="shop_name_kana" value="<#PRINT shop_name_kana#>"/><#PRINT shop_name_kana_err#></td>
 </tr>
@@ -98,7 +106,7 @@ function openWindow() {
 </tr>
 
 <tr>
-<td class="title-tbl02">メールアドレス<span class="red">※</span></td>
+<td class="title-tbl02">メールアドレス</td>
 <td id="link"><input type="text" style="width:600px;" name="shop_email" value="<#PRINT shop_email#>"/><#PRINT shop_email_err#></td>
 </tr>
 
@@ -108,7 +116,12 @@ function openWindow() {
 </tr>
 
 <tr>
-<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td class="title-tbl02">アフィリエイトタグ</td>
+<td><button type="button">検索</button><br><textarea rows="" cols="" style="resize:none;width:600px;height:50px;" name="shop_aff_tag" ><#PRINT shop_aff_tag#></textarea></td>
+</tr>
+
+<tr>
+<td class="title-tbl02">画像 </td>
 <td><input type="file" class="form03b" name="article_img1"/>
 <br>
 <#PRINT article_img1_err#>
@@ -116,14 +129,14 @@ function openWindow() {
 </tr>
 
 <tr>
-<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td class="title-tbl02">画像 </td>
 <td><input type="file" class="form03b" name="article_img2"/>
 <#PRINT article_img2_err#>
 </td>
 </tr>
 
 <tr>
-<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td class="title-tbl02">画像 </td>
 <td><input type="file" class="form03b" name="article_img3"/>
 <#PRINT article_img3_err#>
 </td>

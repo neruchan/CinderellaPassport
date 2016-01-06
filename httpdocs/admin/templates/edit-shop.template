@@ -119,103 +119,90 @@ function changeimg3(str) {
 <form action="" method="post"  enctype="multipart/form-data" id="add_form" name="add_form">
 <table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
 <tr>
-<td width="110" class="title-tbl02">店舗名 <span class="red">※</span></td>
-<td><input type="text" class="form01" name="name" value="<#PRINT name#>"/><br />
-<#PRINT name_err#>
-</td>
+<td class="title-tbl02">店舗名<span class="red">※</span></td>
+<td><input type="text" style="width:600px;" name="shop_name" value="<#PRINT shop_name#>"/><#PRINT shop_name_err#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">都道府県 <span class="red">※</span></td>
-<td>
-<select name="todoufukens">
-<option value="">-</option>
-<#PRINT todoufukens#>
-</select>
-</td>
-</tr>
-<tr>
-<td class="title-tbl02">郵便番号 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="zip" value="<#PRINT zip#>" />
-</td>
+<td class="title-tbl02">店舗名(カナ)<span class="red">※</span></td>
+<td><input type="text" style="width:600px;" name="shop_name_kana" value="<#PRINT shop_name_kana#>"/><#PRINT shop_name_kana_err#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">住所 <span class="red">※</span></td>
+<td class="title-tbl02">カテゴリ <span class="red">※</span></td>
 <td>
-<input type="text" class="form01" name="address" value="<#PRINT address#>" />
+<#PRINT category_checkbox#>
 </td>
 </tr>
-
-
-<tr>
-<td class="title-tbl02">最寄駅 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="eki" value="<#PRINT eki#>" />
-</td>
-</tr>
+<#PRINT category_err#>
 
 <tr>
-<td class="title-tbl02">アクセス <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="access" value="<#PRINT access#>" />
-</td>
+<td class="title-tbl02">店舗紹介文<span class="red">※</span></td>
+<td><textarea rows="" cols="" style="resize:none;width:600px;height:50px;" name="shop_notes" maxlength="160"><#PRINT shop_notes#></textarea></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">営業時間 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="eigyo_jikan" value="<#PRINT eigyo_jikan#>" />
-</td>
+<td class="title-tbl02" rowspan="3">住所</td>
+<td>都道府県<br><select style="width:200px;font-size:12px;" name="shop_pref" >
+<option value="">---</option>
+<#PRINT shop_pref#>
+</select></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">定休日 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="holiday" value="<#PRINT holiday#>" />
-</td>
+
+<td>郵便番号<br><input type="text" style="width:80px;" name="shop_zip1" value="<#PRINT shop_zip1#>" maxlength="3"/> - <input type="text" style="width:80px;" name="shop_zip2" value="<#PRINT shop_zip2#>" maxlength="4"/></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">メールアドレス <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="email" value="<#PRINT email#>" />
-<#PRINT email_err#>
-</td>
+
+<td>住所
+<br><input type="text" style="width:600px;" name="shop_city" value="<#PRINT shop_city#>"/>
+<br><input type="text" style="width:600px;" name="shop_address" value="<#PRINT shop_address#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02" rowspan="2">アクセス</td>
+<td>最寄り駅<br><input type="text" style="width:600px;" name="shop_eki" value="<#PRINT shop_eki#>"/></td>
+</tr>
+<tr>
+<td>備考<br><textarea rows="" cols="" style="resize:none;width:600px;height:50px;" name="shop_access" ><#PRINT shop_access#></textarea></td>
+</tr>
+<tr>
+<td class="title-tbl02">電話番号</td>
+<td><input type="text" style="width:80px;" name="shop_phone1" value="<#PRINT shop_phone1#>" maxlength="4"/> - <input type="text" style="width:80px;" name="shop_phone2" value="<#PRINT shop_phone2#>" maxlength="4"/> - <input type="text" style="width:80px;" name="shop_phone3" value="<#PRINT shop_phone3#>" maxlength="4"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">営業時間</td>
+<td><textarea rows="" cols="" style="resize:none;width:600px;height:50px;" name="shop_opentime" ><#PRINT shop_opentime#></textarea></td>
+</tr>
+<tr>
+<td class="title-tbl02">定休日</td>
+<td><input type="text" style="width:600px;" name="shop_holiday" value="<#PRINT shop_holiday#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">ホームページ</td>
+<td id="link"><input type="text" style="width:600px;" name="shop_homepage" value="<#PRINT shop_homepage#>"/></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">電話番号 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="phone" value="<#PRINT phone#>" />
-</td>
+<td class="title-tbl02">メールアドレス<span class="red">※</span></td>
+<td id="link"><input type="text" style="width:600px;" name="shop_email" value="<#PRINT shop_email#>"/><#PRINT shop_email_err#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">平均価格 <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="average_price" value="<#PRINT average_price#>" />
-</td>
+<td class="title-tbl02">価格（平均）</td>
+<td id="link"><input type="text" style="width:600px;" name="shop_average_price" value="<#PRINT shop_average_price#>"/></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">サイト <span class="red">※</span></td>
-<td>
-<input type="text" class="form01" name="shop_website" value="<#PRINT shop_website#>" />
-</td>
-</tr>
-
-<tr>
-<td class="title-tbl02">詳細 <span class="red">※</span></td>
-<td>
-<textarea class="form04" rows="" cols="" id="contents" name="shop_details"><#PRINT shop_details#></textarea>
-</td>
+<td class="title-tbl02">アフィリエイトタグ</td>
+<td><button type="button">検索</button><br><textarea rows="" cols="" style="resize:none;width:600px;height:50px;" name="shop_aff_tag" ><#PRINT shop_aff_tag#></textarea></td>
 </tr>
 
 <tr>
 <td class="title-tbl02">画像 <span class="red">※</span></td>
-<td><input type="button" class="propicunknown1" onclick="javascript:onbrowse(1)" /><br><input type="file" class="form03b" name="article_img1" id="article_img1" onchange="onUpload1(this);"/>
+<td><img src="<#PRINT shop_img#>" width="50px" />
+<br><input type="file" class="form03b" name="article_img1"/>
 <br>
 <#PRINT article_img1_err#>
 </td>
@@ -223,8 +210,8 @@ function changeimg3(str) {
 
 <tr>
 <td class="title-tbl02">画像 <span class="red">※</span></td>
-<td><input type="button" class="propicunknown2" onclick="javascript:onbrowse(2)" /><br><input type="file" class="form03b" name="article_img2" id="article_img2" onchange="onUpload2(this);"/>
-<br>
+<td><img src="<#PRINT shop_img2#>" width="50px" />
+<br><input type="file" class="form03b" name="article_img2"/>
 <#PRINT article_img2_err#>
 </td>
 </tr>
@@ -232,20 +219,19 @@ function changeimg3(str) {
 <tr>
 <td class="title-tbl02">画像 <span class="red">※</span></td>
 <td>
-<input type="button" class="propicunknown3" onclick="javascript:onbrowse(3)" /><br><input type="file" class="form03b" name="article_img3" id="article_img3" onchange="onUpload3(this);"/>
-
+<img src="<#PRINT shop_img3#>" width="50px" />
 <br>
+<input type="file" class="form03b" name="article_img3"/>
 <#PRINT article_img3_err#>
 </td>
 </tr>
 
-
 </table>
 <input type="hidden" name="shop_id" id="shop_id" value="<#PRINT shop_id#>"/>
 <input type="hidden" name="add_flag" value="add_flag"/>
-<input type="hidden" name="pic_url1" value="<#PRINT pic_url1#>"/>
-<input type="hidden" name="pic_url2" value="<#PRINT pic_url2#>"/>
-<input type="hidden" name="pic_url3" value="<#PRINT pic_url3#>"/>
+<input type="hidden" name="up_img1" value="<#PRINT up_img1#>"/>
+<input type="hidden" name="up_img2" value="<#PRINT up_img2#>"/>
+<input type="hidden" name="up_img3" value="<#PRINT up_img3#>"/>
 </form>
 <div id="line" align="center">
 <a href="javascript:void(0)" id="add_btn"><input type="button" class="space02" value="内容を確認" /></a>

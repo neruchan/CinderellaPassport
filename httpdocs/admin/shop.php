@@ -34,7 +34,6 @@ if($_POST["search_flag"]){
 	$page = 0;
 	unset($_SESSION["sess_shopid"]);
 	unset($_SESSION["sess_shopname"]);
-    unset($_SESSION["sess_s_couponyn"]);
 }
 
 //店舗ID検索
@@ -44,6 +43,10 @@ if($_POST["search_shopid"]!=""){
 if($_SESSION["sess_shopid"]!=""){
 	$PAGE_VALUE["search_shopid"] = $_SESSION["sess_shopid"];
 }
+
+//echo "session shop id ".$_SESSION["sess_shopid"];
+
+
 //店舗名検索
 if($_POST["search_shopname"]!=""){
 	$_SESSION["sess_shopname"] = $_POST["search_shopname"];
@@ -51,26 +54,41 @@ if($_POST["search_shopname"]!=""){
 if($_SESSION["sess_shopname"]!=""){
 	$PAGE_VALUE["search_shopname"] = $_SESSION["sess_shopname"];
 }
-
+//echo "<br>session shop name ".$_SESSION["sess_shopname"];
 
 //ユーザー削除
 if($_POST["search_flag1"]=="del"){
 	if($_POST["delete_id"]){
-		$cinderella_admin->deleteShop(implode(',', $_POST["delete_id"]));
+		$admin->deleteShop(implode(',', $_POST["delete_id"]));
 		header("Location: shop.php");
 	}
 }
 
 if($_POST["search_a_addtime"]!=""){
-	$_SESSION["sess_a_addtime"] = $_POST["search_a_addtime"];
+    if($_POST["search_a_addtime"] == -1){
+        unset($_SESSION["sess_a_addtime"]);
+    }
+    else{
+        $_SESSION["sess_a_addtime"] = $_POST["search_a_addtime"];
+    }
 }
 
 if($_POST["search_pref"]!=""){
-	$_SESSION["sess_pref"] = $_POST["search_pref"];
+    if($_POST["search_pref"] == -1){
+        unset($_SESSION["sess_pref"]);
+    }
+    else{
+        $_SESSION["sess_pref"] = $_POST["search_pref"];
+    }
 }
 
 if($_POST["shop_coupon_yn"]!=""){
-	$_SESSION["sess_s_couponyn"] = $_POST["shop_coupon_yn"];
+    if($_POST["shop_coupon_yn"] == -1){
+        unset($_SESSION["sess_s_couponyn"]);
+    }
+    else{
+        $_SESSION["sess_s_couponyn"] = $_POST["shop_coupon_yn"];
+    }
 }
 
 $PAGE_VALUE["shop_pref_pulldown"] = setOptions($todoufukens,$_SESSION["sess_pref"]);
@@ -90,10 +108,10 @@ $page = 0;
 $npage = 20;
 
 $PAGE_VALUE["all_num"] = $admin->selectShopAllNum();
-$dataCnt = $admin->selectShopCntAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],"");
+$dataCnt = $admin->selectShopCntAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],$_SESSION["sess_s_couponyn"]);
 
 $PAGE_VALUE["search_num"] = $dataCnt;
-$valuesForLoop['dataAll'] = $admin->selectShopAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],"",$_SESSION["sess_a_addtime"],$npage,$page);
+$valuesForLoop['dataAll'] = $admin->selectShopAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],$_SESSION["sess_a_addtime"],$_SESSION["sess_s_couponyn"],$npage,$page);
 
 foreach($valuesForLoop['dataAll'] as $key => $val) {
 

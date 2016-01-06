@@ -26,126 +26,109 @@
 <table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
 <tr>
 <td width="110" class="title-tbl02">店舗名 <span class="red">※</span></td>
-<td><#PRINT name#><br />
+<td><#PRINT shop_name#><br />
+</td>
+</tr>
+<tr>
+<td width="110" class="title-tbl02">店舗名(カナ) <span class="red">※</span></td>
+<td><#PRINT shop_name_kana#><br />
 </td>
 </tr>
 
 <tr>
-<td class="title-tbl02">都道府県 <span class="red">※</span></td>
+<td class="title-tbl02">カテゴリ </td>
 <td>
-<#PRINT pref#>
-</td>
-</tr>
-<tr>
-<td class="title-tbl02">郵便番号 <span class="red">※</span></td>
-<td>
-<#PRINT zip#>
+<#PRINT category#>
 </td>
 </tr>
 
 <tr>
-<td class="title-tbl02">住所 <span class="red">※</span></td>
-<td>
-<#PRINT address#>
-</td>
-</tr>
-
-
-<tr>
-<td class="title-tbl02">最寄駅 <span class="red">※</span></td>
-<td>
-<#PRINT station#>
+<td width="110" class="title-tbl02">店舗紹介文<span class="red">※</span></td>
+<td><#PRINT shop_notes#><br />
 </td>
 </tr>
 
 <tr>
-<td class="title-tbl02">アクセス <span class="red">※</span></td>
-<td>
-<#PRINT access#>
+<td class="title-tbl02" rowspan="3">住所</td>
+<td><u>都道府県</u><br>
+<#PRINT shop_pref#>
 </td>
 </tr>
 
 <tr>
-<td class="title-tbl02">営業時間 <span class="red">※</span></td>
-<td>
-<#PRINT eigyo_jikan#>
-</td>
+
+<td><u>郵便番号</u><br><#PRINT shop_zip#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">定休日 <span class="red">※</span></td>
-<td>
-<#PRINT holiday#>
-</td>
+
+<td><u>住所</u>
+<br><#PRINT shop_city#>
+<br><#PRINT shop_address#></td>
+</tr>
+<tr>
+<td class="title-tbl02" rowspan="2">アクセス</td>
+<td><u>最寄り駅</u><br><#PRINT shop_eki#></td>
+</tr>
+<tr>
+<td><u>備考</u><br><#PRINT shop_access#></td>
+</tr>
+<tr>
+<td class="title-tbl02">電話番号</td>
+<td><#PRINT shop_phone#></td>
+</tr>
+<tr>
+<td class="title-tbl02">営業時間</td>
+<td><#PRINT shop_opentime#></td>
+</tr>
+<tr>
+<td class="title-tbl02">定休日</td>
+<td><#PRINT shop_holiday#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ホームページ</td>
+<td id="link"><#PRINT shop_homepage#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">メールアドレス <span class="red">※</span></td>
-<td>
-<#PRINT email#>
-</td>
+<td class="title-tbl02">メールアドレス<span class="red">※</span></td>
+<td id="link"><#PRINT shop_email#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">電話番号 <span class="red">※</span></td>
-<td>
-<#PRINT phone#>
-</td>
+<td class="title-tbl02">価格（平均）</td>
+<td id="link"><#PRINT shop_average_price#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">平均価格 <span class="red">※</span></td>
-<td>
-<#PRINT average_price#>
-</td>
+<td class="title-tbl02">アフィリエイトタグ</td>
+<td><#PRINT shop_aff_tag#></td>
 </tr>
 
 <tr>
-<td class="title-tbl02">サイト <span class="red">※</span></td>
-<td>
-<#PRINT website#>
-</td>
-</tr>
-
-<tr>
-<td class="title-tbl02">詳細 <span class="red">※</span></td>
-<td>
-<#PRINT detail#>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td><a href="<#PRINT shop_img#>" target="_blank"><img src="<#PRINT shop_img#>" width="50px"/></a>
 </td>
 </tr>
 
 <tr>
 <td class="title-tbl02">画像 <span class="red">※</span></td>
-<td>
-<div class="pic-wrap">
-<img src="<#PRINT pic_url1#>" width="72"/>
-</div>
+<td><a href="<#PRINT shop_img2#>" target="_blank"><img src="<#PRINT shop_img2#>" width="50px" /></a>
 </td>
 </tr>
 
 <tr>
 <td class="title-tbl02">画像 <span class="red">※</span></td>
-<td>
-<div class="pic-wrap">
-<img src="<#PRINT pic_url2#>" width="72"/>
-</div>
+<td><a href="<#PRINT shop_img3#>" target="_blank"><img src="<#PRINT shop_img3#>" width="50px" /></a>
 </td>
 </tr>
-
-<tr>
-<td class="title-tbl02">画像 <span class="red">※</span></td>
-<td>
-<div class="pic-wrap">
-<img src="<#PRINT pic_url3#>" width="72"/>
-</div>
-</td>
-</tr>
-
 
 </table>
 
 <div id="line" align="center">
-<a href="edit-shop.php?sid=<#PRINT id#>&no=<#PRINT no#>"><input type="button" class="space02" value="編集" /></a> &nbsp;
+
+<input type="button" class="space02" value="編集" onClick="document.location.href='edit-shop.php?sid=<#PRINT id#>&no=<#PRINT no#>'"/>
+ &nbsp;
 <a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
 </div>
 

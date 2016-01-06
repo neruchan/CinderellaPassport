@@ -21,7 +21,7 @@
 		$("#search_pref").change(function(){
 			$("#delForm").submit();
 		});
-		$("#search_writer").change(function(){
+		$("#shop_coupon_yn").change(function(){
 			$("#delForm").submit();
 		});
 		$("#search_a_addtime").change(function(){
@@ -68,17 +68,19 @@ ID検索 <input type="text" size="40" name="search_shopid" id="search_shopid" va
 <td width="480" class="title-tbl">店舗名</td>
 <td width="100" class="title-tbl">
 <select name="search_pref" id="search_pref">
-<option value="0">都道府県</option>
+<option value="-1">都道府県</option>
 <#PRINT shop_pref_pulldown#>
 </select>
 </td>
 <td width="100" class="title-tbl">
 <select name="search_a_addtime" id="search_a_addtime">
+<option value="-1">投稿日時</option>
 <#PRINT shop_addtime_pulldown#>
 </select>
 </td>
 <td width="100" class="title-tbl">
 <select name="shop_coupon_yn" id="shop_coupon_yn">
+<option value="-1">クーポン有無</option>
 <#PRINT shop_coupon_yn_pulldown#>
 </select>
 </td>
@@ -91,6 +93,7 @@ ID検索 <input type="text" size="40" name="search_shopid" id="search_shopid" va
 <td class="tbl"><a href="detail-shop.php?sid=<#LOOP_PRINT id#>&no=<#LOOP_PRINT no#>"><#LOOP_PRINT name#></a></td>
 <td class="tbl"><#LOOP_PRINT pref#></td>
 <td class="tbl"><#LOOP_PRINT addtime#></td>
+<td class="tbl"></td>
 <td class="tbl" align="center"><input type="checkbox" name="delete_id[]" value="<#LOOP_PRINT id#>"/></td>
 </tr>
 <#LOOP_END dataAll#>
