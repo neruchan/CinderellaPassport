@@ -5,5 +5,5 @@
 <link rel="stylesheet" href="css/common.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 
-<title>TiARYモデル　｜　管理画面</title>
+<title>シンデレラパスポート&TiARYBeauty　｜　管理画面</title>
 </head>

@@ -30,7 +30,7 @@ $PAGE_VALUE["tag_2"] = "-->";
 if($_POST['submit']){
     $PAGE_VALUE["tag_1"] = "";
     $PAGE_VALUE["tag_2"] = "";
-    $valuesForLoop['dataAll'] = $admin->selectShopAll("",$_POST['keyword'],"","","","",1000,0);
+    $valuesForLoop['dataAll'] = $admin->selectShopAllCin("",$_POST['keyword'],"","","",1000,0);
 }
 
 

@@ -110,8 +110,10 @@ $npage = 20;
 $PAGE_VALUE["all_num"] = $admin->selectShopAllNum();
 $dataCnt = $admin->selectShopCntAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],$_SESSION["sess_s_couponyn"]);
 
-$PAGE_VALUE["search_num"] = $dataCnt;
+
 $valuesForLoop['dataAll'] = $admin->selectShopAllCin($_SESSION["sess_shopid"],$_SESSION["sess_shopname"],$_SESSION["sess_pref"],$_SESSION["sess_a_addtime"],$_SESSION["sess_s_couponyn"],$npage,$page);
+
+$PAGE_VALUE["search_num"] = $dataCnt;
 
 foreach($valuesForLoop['dataAll'] as $key => $val) {
 
@@ -122,7 +124,7 @@ foreach($valuesForLoop['dataAll'] as $key => $val) {
 	$valuesForLoop['dataAll'][$key]["addtime"] = date("Y/m/d H:i",strtotime($val["shop_addtime"]));
 	
 	$valuesForLoop['dataAll'][$key]["pref"] = $val["shop_pref"];
-    $valuesForLoop['dataAll'][$key]["coupon_yn"] = ($val["coupon_amount"] > 0 ? "あり($val["coupon_amount"]枚)" : "なし");
+    $valuesForLoop['dataAll'][$key]["coupon_yn"] = ($val["coupon_amount"] > 0 ? "あり(".$val["coupon_amount"]."枚)" : "なし");
 	
 	$pageCnt = intval($dataCnt / $npage);
 	if($dataCnt > $pageCnt * $npage)

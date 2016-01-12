@@ -772,35 +772,42 @@ class admin extends ipfDB{
 	function selectShopCntAllCin($id,$name,$pref="",$couponyn=""){
         $prefsql = "";
         if($pref!=""){
-            $prefsql = " AND shop_pref = '$pref'";
+            $prefsql = " AND s.shop_pref = '$pref'";
         }
         
         $cuposql = "";
         if($couponyn!=""){
-            //$cuposql = " AND shop_pref = '$pref'";
+            if($couponyn==1){
+                $cuposql = " HAVING count(DISTINCT cs.id) > 0";
+            }
+            else if($couponyn==2){
+                $cuposql = " HAVING count(DISTINCT cs.id) = 0 ";
+            }
         }
         
         $keywordsql = "";
 		if($id!=""){
-			$keywordsql .= " AND id = '$id' ";
+			$keywordsql .= " AND s.id = '$id' ";
 		}
 
 		if($name!=""){
-			$keywordsql .= " AND shop_name LIKE '%$name%' ";
+			$keywordsql .= " AND s.shop_name LIKE '%$name%' ";
 		}
 
 
 		$sql = "SELECT
 					count(*)cnt
 				FROM
-					shoptbl
+					shoptbl s
+                LEFT JOIN coupon_x_shop cs ON cs.shop_id = s.id
 				WHERE
-					shop_delete_flag = 0
+					s.shop_delete_flag = 0
+                GROUP BY s.id
                 $keywordsql
 				$prefsql
                 $cuposql
 						";
-		// 						print $sql;
+//		 						print $sql;
 		$data = $this->query($sql);
 		return $data[0]["cnt"];
 	}
@@ -834,6 +841,12 @@ class admin extends ipfDB{
         
         $cuposql = "";
         if($couponyn!=""){
+            if($couponyn==1){
+                $cuposql = " HAVING coupon_amount > 0";
+            }
+            else if($couponyn==2){
+                $cuposql = " HAVING coupon_amount = 0 ";
+            }
             //$cuposql = " AND shop_pref = '$pref'";
         }
 
@@ -872,8 +885,9 @@ class admin extends ipfDB{
 					s.shop_delete_flag = 0
                     $keywordsql
 					$prefsql
-                    $cuposql
                 GROUP BY s.id
+                    $cuposql
+                
 					$order
                 
 					LIMIT $num OFFSET ".($page * $num)." ";
