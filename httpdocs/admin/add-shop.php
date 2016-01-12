@@ -164,14 +164,14 @@ if($_POST["add_flag"]!=""){
 		$error_flag = 1;
 	}
     
-    if($_POST["shop_name_kana"] ==""){
-		$PAGE_VALUE['shop_name_kana_err'] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
-		$error_flag = 1;
-	}
-	elseif(mb_strlen($_POST["shop_name"], 'UTF-8') > 80){
-		$PAGE_VALUE['shop_name_err'] ='<br><p class="red">※80文字以内で入力してください。</p>';
-		$error_flag = 1;
-	}
+//    if($_POST["shop_name_kana"] ==""){
+//		$PAGE_VALUE['shop_name_kana_err'] ='<br><p class="red">※必須項目です。正しくご入力ください。</p>';
+//		$error_flag = 1;
+//	}
+//	elseif(mb_strlen($_POST["shop_name"], 'UTF-8') > 80){
+//		$PAGE_VALUE['shop_name_err'] ='<br><p class="red">※80文字以内で入力してください。</p>';
+//		$error_flag = 1;
+//	}
     
 //    if($_POST["shop_email"] ==""){
 //		$PAGE_VALUE['shop_email_err'] ='<br><p class="red">※「メールアドレス」は必須項目です、入力して下さい。</p>';
