@@ -10,7 +10,7 @@
  * 定義
 ***********************/
 require_once "cinderella/ipfTemplate.php";
-require_once "tiary/ipfDB.php";
+require_once "cinderella/ipfDB.php";
 /***********************
  * コンストラクタ
 ***********************/
