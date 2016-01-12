@@ -122,6 +122,7 @@ foreach($valuesForLoop['dataAll'] as $key => $val) {
 	$valuesForLoop['dataAll'][$key]["addtime"] = date("Y/m/d H:i",strtotime($val["shop_addtime"]));
 	
 	$valuesForLoop['dataAll'][$key]["pref"] = $val["shop_pref"];
+    $valuesForLoop['dataAll'][$key]["coupon_yn"] = ($val["coupon_amount"] > 0 ? "あり($val["coupon_amount"]枚)" : "なし");
 	
 	$pageCnt = intval($dataCnt / $npage);
 	if($dataCnt > $pageCnt * $npage)

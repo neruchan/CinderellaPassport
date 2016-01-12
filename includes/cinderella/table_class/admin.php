@@ -863,15 +863,19 @@ class admin extends ipfDB{
 					s.shop_homepage,
 					s.shop_pay,
                     s.shop_email,
-                    s.shop_addtime
+                    s.shop_addtime,
+                    count(DISTINCT cs.id) AS coupon_amount 
 				FROM
 					shoptbl s
+                LEFT JOIN coupon_x_shop cs ON cs.shop_id = s.id
 				WHERE
 					s.shop_delete_flag = 0
                     $keywordsql
 					$prefsql
                     $cuposql
+                GROUP BY s.id
 					$order
+                
 					LIMIT $num OFFSET ".($page * $num)." ";
  			//print $sql;
 		$data = $this->query($sql);
@@ -932,7 +936,7 @@ class admin extends ipfDB{
 		$sql = "SELECT
 						s.*
 					FROM
-						shoptbl s LEFT JOIN admin_shop ads ON ads.shop_id = s.id
+						shoptbl s
 					WHERE
 						s.id = $id
 					AND s.shop_delete_flag = 0";

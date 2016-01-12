@@ -85,7 +85,7 @@ ID検索 <input type="text" size="40" name="search_shopid" id="search_shopid" va
 <td class="tbl"><a href="detail-shop.php?sid=<#LOOP_PRINT id#>&no=<#LOOP_PRINT no#>"><#LOOP_PRINT name#></a></td>
 <td class="tbl"><#LOOP_PRINT pref#></td>
 <td class="tbl"><#LOOP_PRINT addtime#></td>
-<td class="tbl"></td>
+<td class="tbl"><#LOOP_PRINT coupon_yn#></td>
 <td class="tbl" align="center"><input type="checkbox" name="delete_id[]" value="<#LOOP_PRINT id#>"/></td>
 </tr>
 <#LOOP_END dataAll#>
