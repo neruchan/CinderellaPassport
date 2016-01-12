@@ -85,7 +85,7 @@ if(count($shopData)>0){
         }
 
         $PAGE_VALUE["shop_img"] = $shopImg1;
-        $PAGE_VALUE["up_img1"] = $shopImg1;
+        $PAGE_VALUE["up_img1"] = $shopData["shop_img"];
     }
     else{
         $PAGE_VALUE["shop_img"] = "//cinderella.tiary.jp/img/no-img2.jpg";
